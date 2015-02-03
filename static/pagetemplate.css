@@ -67,6 +67,9 @@ h1{
 	width: 100%;
 	display:inline-block;
 }
+.navspace{
+	width:10%;
+}
 
 .numberdiv{
 	font: 36px GeosansLight !important;

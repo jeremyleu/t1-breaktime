@@ -1,0 +1,279 @@
+@font-face {
+	font-family: 'DINRegular';
+	src: url('din-regular-webfont.eot');
+    src: url('din-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('din-regular-webfont.woff') format('woff'),
+         url('din-regular-webfont.ttf') format('truetype'),
+         url('din-regular-webfont.svg#dinregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DINBold';
+    src: url('din_bold-webfont.eot');
+    src: url('din_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('din_bold-webfont.woff') format('woff'),
+         url('din_bold-webfont.ttf') format('truetype'),
+         url('din_bold-webfont.svg#dinbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: GeosansLight;
+	src: url("GeosansLight.eot") /* EOT file for IE */
+}
+@font-face {
+	font-family: GeosansLight;
+	src: url("GeosansLight.ttf") /* TTF file for CSS3 browsers */
+}
+body{
+	font: 14px "DINRegular", georgia;
+	line-height:1.7;
+	letter-spacing:0px;
+	color: #3f3f3f;
+	background:url('general background.png') no-repeat 0px 0px;
+}
+h1{
+	font: "DINBold";
+	font-weight:regular;
+}
+
+.nav-bar {
+ 	position: fixed;
+  	bottom: 0;
+  	left: 0;
+  	border-top: 35px #000000 solid;
+  	z-index: 9999;
+  	width: 100%;
+  	height: 10%;
+  	background-color: #b2ebfc;
+  	text-align:justify;
+  	font-size:0.1px !important;
+  	min-width:400px;
+}
+.navicon {
+	height: 80%;
+	padding-top: 0.5%;
+}
+.nav-bar div {
+	display:inline-block;
+}
+.nav-bar:after{
+	content: '';
+	width: 100%;
+	display:inline-block;
+}
+
+.numberdiv{
+	font: 36px GeosansLight !important;
+	position:absolute;
+	top:-2px !important;
+	left:5px !important;
+	width:20px;
+	background:none !important;;
+}
+.whatever{
+	height:26px;
+	position:absolute;
+	top:-2px !important;
+	left:28px !important;
+	width:120px !important;
+	background:none !important;
+}
+table, tr, td{
+	font: 11px "DINRegular", georgia;
+	color: #000000 !important;
+	text-decoration:none !important;
+}
+#main{
+
+	margin-top:440px;
+	width:750px;
+
+}
+#lightningbolt
+{
+	opacity:1;
+	border: 0px !important;
+	position:absolute;
+	top:-5px;
+	left:-20px;
+	-webkit-transition: left 0.5s ease-in-out;
+    -moz-transition: left 0.5s ease-in-out;
+    -o-transition: left 0.5s ease-in-out;
+}
+#lightningbolt:hover
+{
+	left: 0px;
+}
+#next{
+	float:right;
+}
+#previous{
+	float:left;
+}
+#next a, #next a:link, #next a:active, #next a:visited, #next a:hover, #previous a, #previous a:link, #previous a:active, #previous a:visited, #previous a:hover, a, a:link, a:active, a:visited{
+	text-decoration:none;
+	color:#000000;
+}
+#next a, #next a:link, #next a:active, #next a:visited, #previous a, #previous a:link, #previous a:active, #previous a:visited, .pinched a, .pinched a:link, .pinched a:active, .pinched a:visited {
+	opacity:0.5;
+	-webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+}
+#next a:hover, #previous a:hover, .pinched a:hover{
+	opacity:1;
+}
+.pinched a:link, .pinched a:active, .pinched a:visited, .pinched a, .pinched a:hover{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+td{
+	width:50%;
+}
+.tablehead{
+	margin-left: -7px;	
+}
+.titleimg, #titleimgbottom{
+	opacity:1 !important;
+	border-style: none !important;
+}
+
+.titleimgbottom{
+	border-style: none !important;
+}
+#titleimgcontainertop{
+	position:relative;
+	top:0px;
+	left:0px;
+	width:100%;
+}
+#titleimgcontainerbottom{
+	position:relative;
+	width:100%;
+	top:-107px;
+	left:0px;
+}
+
+.pinched {
+
+	position:relative;
+
+	padding:15px;
+
+	margin:50px 0 3em;
+
+	text-align:center;
+
+	color:#fff;
+
+	background:#333; 
+
+	/* css3 */
+
+	-webkit-border-radius:10px;
+
+	-moz-border-radius:10px;
+
+	border-radius:10px;
+	font-family: cambria !important;
+	font-size: 18px !important;
+	letter-spacing: 0px !important;
+}
+
+
+
+/* creates a rectangle of the colour wanted for the pointy bit */
+
+.pinched:before {
+
+	content:"";
+
+	position:absolute;
+
+	top:-20px;
+
+	left:50%;
+
+	width:100px;
+
+	height:20px;
+
+	margin:0 0 0 -50px;
+
+	background:#333;
+}
+
+
+
+/* creates a rounded rectangle to cover part of the rectangle generated above */
+
+.pinched:after {
+
+	content:"";
+
+	position:absolute;
+
+	top:-20px;
+
+	left:0;
+
+	width:50%;
+
+	height:20px;
+
+	background:#fff;
+
+	/* css3 */
+
+	-webkit-border-bottom-right-radius:15px;
+
+	-moz-border-radius-bottomright:15px;
+
+	border-bottom-right-radius:15px;
+
+}
+
+
+
+/* creates the other rounded rectangle */
+
+.pinched > :first-child:before {
+
+	content:""; 
+
+	position:absolute; 
+
+	top:-20px; 
+
+	right:0; 
+
+	width:50%; 
+
+	height:20px; 
+
+	background:#fff;
+
+	/* css3 */
+
+	-webkit-border-bottom-left-radius:15px;
+
+	-moz-border-radius-bottomleft:15px;
+
+	border-bottom-left-radius:15px;
+
+}
+.quoteend{
+	font-size: 14px;
+	font-style: italic;
+}
+.hangingindent{
+	text-indent:-25px;
+	padding-left:25px;
+}

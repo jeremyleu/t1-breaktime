@@ -70,6 +70,9 @@ h1{
 .navspace{
 	width:8%;
 }
+#bottomspace{
+	height:20%;
+}
 
 .numberdiv{
 	font: 36px GeosansLight !important;

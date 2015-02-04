@@ -48,7 +48,11 @@ body{
     -o-transition: background-position .3s ease;
 	transition: background-position .3s ease;
 }
-
+@media screen and (max-width: 800px) {
+    #content{
+    	font:24px "DINRegular", georgia;
+    }
+}
 h1{
 	font: "DINBold";
 	font-weight:regular;

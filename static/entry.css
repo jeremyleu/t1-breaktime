@@ -1,0 +1,109 @@
+@font-face {
+	font-family: 'DINRegular';
+	src: url('din-regular-webfont.eot');
+    src: url('din-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('din-regular-webfont.woff') format('woff'),
+         url('din-regular-webfont.ttf') format('truetype'),
+         url('din-regular-webfont.svg#dinregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DINBold';
+    src: url('din_bold-webfont.eot');
+    src: url('din_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('din_bold-webfont.woff') format('woff'),
+         url('din_bold-webfont.ttf') format('truetype'),
+         url('din_bold-webfont.svg#dinbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: GeosansLight;
+	src: url("GeosansLight.eot") /* EOT file for IE */
+}
+@font-face {
+	font-family: GeosansLight;
+	src: url("GeosansLight.ttf") /* TTF file for CSS3 browsers */
+}
+
+input{
+	font: 12px "DINRegular", georgia;
+}
+
+body{
+	font: 14px "DINRegular", georgia;
+	line-height:1.7;
+	letter-spacing:0px;
+	color: #3f3f3f;
+	background-image:url('breaktimeintro.png');
+	background-repeat:=no-repeat;
+	background-position:0px 0px;
+	-webkit-transition: background-position .3s ease;
+	-moz-transition: background-position .3s ease;
+    -o-transition: background-position .3s ease;
+	transition: background-position .3s ease;
+	overflow:hidden;
+}
+
+h1{
+	font: "DINBold";
+	font-weight:regular;
+}
+
+body:hover{
+	background-position: 0px -500px;
+}
+
+
+#content{
+	position:absolute;
+	left:0px;
+	top:200px;
+	width:100%;
+	text-align:center;
+}
+
+#enterbottom{
+	position:absolute;
+	left:0px;
+	top:275px;
+	width:100%;
+	text-align:center;
+}
+#enter img{
+	height:200px;
+	width:250px;
+	-webkit-transition: all 0.75s ease-in-out;
+	-moz-transition: all 0.75s ease-in-out;
+	-o-transition: all 0.75s ease-in-out;
+	-ms-transition: all 0.75s ease-in-out;	
+	transition: all 0.75s ease-in-out;
+}
+
+#enter img:hover{
+	opacity: 1;
+ 
+	/* Firefox */
+	-moz-transform: scale(1.5) rotate(20deg) translate(20px);
+	/* WebKit */
+	-webkit-transform: scale(1.5) rotate(20deg) translate(20px);
+	/* Opera */
+	-o-transform: scale(1.5) rotate(20deg) translate(20px);
+	/* Standard */
+	transform: scale(1.5) rotate(20deg) translate(20px);
+
+	z-index: 1000;
+
+}
+
+#enter img.top:hover{
+	opacity:0;
+}
+#enter img, #enterbottom img{
+	border-style: none !important;
+}

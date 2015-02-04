@@ -50,8 +50,11 @@ body{
 }
 @media screen and (max-width: 800px) {
     #content{
-    	font:24px "DINRegular", georgia;
+    	font:48px "DINRegular", georgia;
     }
+    input{
+		font: 48px "DINRegular", georgia;
+	}
 }
 h1{
 	font: "DINBold";

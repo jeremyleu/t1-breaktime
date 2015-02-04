@@ -1,110 +1,69 @@
 <!DOCTYPE html>
 <head>
-  <title>Break Time register</title>
-  <style>
-    body {
-      text-align: center;
-      background: 	#383838;
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-family: helvetica;
-    }
-    p {
-      font-size: 22px;
-    }
-    input {
-      border: 0;
-      padding: 10px;
-      font-size: 18px;
-    }
-    
-     input[type="Button"] {
-      background: #0099CC;
-      color: white;
-       padding: 10px;
-    }
-  </style>
+  <title>Breaktime - Register</title>
+  <link rel="stylesheet" type="text/css" href="entry.css" />
 </head>
 <body>
-  <!--img src="logo here"-->
-  <p> The easy way to keep track of your health at a desk!</p>
-  <input type="email" placeholder="Your Email">
-  </br>
-  </br>
-  <input type="password" placeholder="Password">
-  </br>
-  </br>
-  <input type="password" placeholder="Verify Password">
-  </br>
-  </br>
-Work from 
-  <select>
-  <option value="begin work hours">Hour</option>
-  <option value="1">1</option>
-  <option value="2">2 </option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10">10</option>
-  <option value="11">11</option>
-  <option value="12">12</option>
- </select>
- <select>
-  <option value="begin work minutes">Minute</option>
-  <option value="00am">00 am </option>
-  <option value="10am">10 am</option>
-  <option value="20am">20 am</option>
-  <option value="30am">30 am</option>
-  <option value="40am">40 am</option>
-  <option value="50am">50 am</option>
-  <option value="00pm">00 pm </option>
-  <option value="10pm">10 pm</option>
-  <option value="20pm">20 pm</option>
-  <option value="30pm">30 pm</option>
-  <option value="40pm">40 pm</option>
-  <option value="50pm">50 pm</option>
- </select>
- 
- to 
+  <div id = "content" align = "center"> 
+    <img src = "logo.png" style = "width:500px"><br>
+    <h1>REGISTER</h1>
+    Email: <input type="email" placeholder="Your Email">
+    </br>
+    Password: <input type="password" placeholder="Password">
+    </br>
+    Verify Password: <input type="password" placeholder="Verify Password">
+    </br>
+    </br>
+  Work from 
+    <select>
+    <option value="Begin work hours">Hour</option>
+    <option value="1">1</option>
+    <option value="2">2 </option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+   </select>
+   :
+    <input type="minutes" placeholder="Min" size = "3">
+    <select>
+    <option value="AM">AM</option>
+    <option value="PM">PM</option>
 
- <select>
-  <option value="End work hours">Hour</option>
-  <option value="1">1</option>
-  <option value="2">2 </option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10">10</option>
-  <option value="11">11</option>
-  <option value="12">12</option>
- </select>
- <select>
-  <option value="End work minutes">Minute</option>
-  <option value="00am">00 am </option>
-  <option value="10am">10 am</option>
-  <option value="20am">20 am</option>
-  <option value="30am">30 am</option>
-  <option value="40am">40 am</option>
-  <option value="50am">50 am</option>
-  <option value="00pm">00 pm </option>
-  <option value="10pm">10 pm</option>
-  <option value="20pm">20 pm</option>
-  <option value="30pm">30 pm</option>
-  <option value="40pm">40 pm</option>
-  <option value="50pm">50 pm</option>
- </select>
-  </br>
-  </br>
-  <INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
-  <input type="button"VALUE="Next" onClick="">
+   </select>
+   to 
 
+      <select>
+    <option value="End work hours">Hour</option>
+    <option value="1">1</option>
+    <option value="2">2 </option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+   </select>
+   :
+    <input type="minutes" placeholder="Min" size = "3">
+    <select>
+    <option value="AM">AM</option>
+    <option value="PM">PM</option>
+
+   </select>
+    </br>
+    </br>
+    <INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
+    <input type="button"VALUE="Next" onClick="location.href = 'register_2.html'">
+</div>
 </body>

@@ -47,7 +47,6 @@ body{
 	-moz-transition: background-position .3s ease;
     -o-transition: background-position .3s ease;
 	transition: background-position .3s ease;
-	overflow:hidden;
 }
 
 h1{
@@ -55,17 +54,28 @@ h1{
 	font-weight:regular;
 }
 
-body:hover{
-	background-position: 0px -500px;
+#bottomspace{
+	height:100px;
 }
 
-
 #content{
-	position:absolute;
-	left:0px;
-	top:240px;
-	width:100%;
+	padding-top:240px;
+	width:750px;
 	text-align:center;
+}
+
+#content a, a:link, a:active, a:visited{
+	-webkit-transition: color 0.75s ease-in-out;
+	-moz-transition: color 0.75s ease-in-out;
+	-o-transition: color 0.75s ease-in-out;
+	-ms-transition: color 0.75s ease-in-out;	
+	transition: color 0.75s ease-in-out;
+	text-decoration: none;
+	color:#596fae;
+}
+
+#content a:hover{
+	color:#888888;
 }
 
 #enterbottom{

@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>BREAKTIME - Preferences</title>
+		<link rel="stylesheet" type="text/css" href="pagetemplate.css" />
+	</head>
+	<body>
+
+		
+		<center>
+      {{#each user}}
+			<div id="main">
+				<div align="justify" style="margin-top:-106px;">
+          <form>
+
+					You are currently logged in as "{{username}}" <button type="button" name="logout">Log Out </button>
+ 					</br>
+ 					<!-- Adjust Selected Activities:a
+ 					<div class="checks">
+  					<input type="checkbox" name="activity" value="1">activity 1<br>
+  					<input type="checkbox" name="activity" value="2">activity 2<br>
+  					<input type="checkbox" name="activity" value="3">activity 3<br>
+  					<input type="checkbox" name="activity" value="4">activity 4 <br> 
+  					<input type="checkbox" name="activity" value="5">activity 5<br>
+  					<input type="checkbox" name="activity" value="6">activity 6 <br> 
+ 					<input type="checkbox" name="activity" value="7">activity 7<br>
+  					<input type="checkbox" name="activity" value="8">activity 8 <br> 
+ 					<input type="checkbox" name="activity" value="9">activity 9<br>
+  					<input type="checkbox" name="activity" value="10">activity 10<br> 
+  					</div>
+  					</br>
+            -->
+ 					Work from 
+ 					<select>
+  					<option value="begin work hours">Hour</option>
+  					<option value="1">1</option>
+  					<option value="2">2 </option>
+  					<option value="3">3</option>
+ 					<option value="4">4</option>
+ 					<option value="5">5</option>
+  					<option value="6">6</option>
+ 					<option value="7">7</option>
+  					<option value="8">8</option>
+  					<option value="9">9</option>
+  					<option value="10">10</option>
+  					<option value="11">11</option>
+  					<option value="12">12</option>
+ 					</select>
+           <input type="minBeg" placeholder="Min">
+ 					<select>
+            <option value="BeginAMPM">Period</option>
+            <option value="am">am</option>
+            <option value="pm">pm</option>
+          </select>
+ to 
+ 					<select>
+ 					<option value="End work hours">Hour</option>
+  					<option value="1">1</option>
+  					<option value="2">2 </option>
+  					<option value="3">3</option>
+ 					<option value="4">4</option>
+ 					<option value="5">5</option>
+					<option value="6">6</option>
+ 					<option value="7">7</option>
+ 					<option value="8">8</option>
+ 					<option value="9">9</option>
+  					<option value="10">10</option>
+  					<option value="11">11</option>
+  					<option value="12">12</option>
+ 					</select>
+          <input type="minEnd" placeholder="min">
+ 					<select>
+  					<option value="EndAMPM">Period</option>
+  					<option value="am">am</option>
+  					<option value="pm">pm</option>
+ 					</select>
+  					</br>
+  					Select A Break Interval: 
+ 					<select>
+  					<option value="interval">Choose interval</option>
+  					<option value="1">20 min</option>
+  					<option value="2">30 min </option>
+  					<option value="3">40 min</option>
+ 					<option value="4">50 min</option>
+ 					<option value="5">60 min</option>
+ 					</select>
+ 					<br>
+ 					Select Alarm Type
+ 					<select>
+  					<option value="AlarmType">Choose Alarm</option>
+  					<option value="textMessage">Text Message Alert</option>
+  					<option value="email"> Email Alert</option>
+  					<option value="Alarm">Classic Alarm</option>
+ 					</select>
+ 					<br>
+ 					<br>
+ 					<input type="submit">
+			    </form>
+      </div>
+			</div>
+      {{/each}}
+			<div id = "bottomspace"></div>
+		</center>
+		<nav class="nav-bar">
+ 		<center>
+ 			<div><a href="home.html"><img src = "navicons/home.png" class = "navicon"></a></div>
+ 			<div class = "navspace"></div>
+	 		<div><a href="levels.html"><img src = "navicons/levels.png" class = "navicon"></a></div>
+	 		<div class = "navspace"></div>
+	 		<div><a href="activity.html"><img src = "navicons/activity.png" class = "navicon"></a></div>
+	 		<div class = "navspace"></div>
+	 		<div><a href="settings.html"><img src = "navicons/settings.png" class = "navicon"></a></div>
+	 		<div class = "navspace"></div>
+	 		<div><a href="help.html"><img src = "navicons/help.png" class = "navicon"></a></div>
+ 		</center>
+		</nav>
+	</body>
+</html>

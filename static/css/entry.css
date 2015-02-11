@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'DINRegular';
-	src: url('din-regular-webfont.eot');
-    src: url('din-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('din-regular-webfont.woff') format('woff'),
-         url('din-regular-webfont.ttf') format('truetype'),
-         url('din-regular-webfont.svg#dinregular') format('svg');
+	src: url('../fonts/din-regular-webfont.eot');
+    src: url('../fonts/din-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/din-regular-webfont.woff') format('woff'),
+         url('../fonts/din-regular-webfont.ttf') format('truetype'),
+         url('../fonts/din-regular-webfont.svg#dinregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -12,11 +12,11 @@
 
 @font-face {
     font-family: 'DINBold';
-    src: url('din_bold-webfont.eot');
-    src: url('din_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('din_bold-webfont.woff') format('woff'),
-         url('din_bold-webfont.ttf') format('truetype'),
-         url('din_bold-webfont.svg#dinbold') format('svg');
+    src: url('../fonts/din_bold-webfont.eot');
+    src: url('../fonts/din_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/din_bold-webfont.woff') format('woff'),
+         url('../fonts/din_bold-webfont.ttf') format('truetype'),
+         url('../fonts/din_bold-webfont.svg#dinbold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -24,11 +24,11 @@
 
 @font-face {
 	font-family: GeosansLight;
-	src: url("GeosansLight.eot") /* EOT file for IE */
+	src: url("../fonts/GeosansLight.eot") /* EOT file for IE */
 }
 @font-face {
 	font-family: GeosansLight;
-	src: url("GeosansLight.ttf") /* TTF file for CSS3 browsers */
+	src: url("../fonts/GeosansLight.ttf") /* TTF file for CSS3 browsers */
 }
 
 input{
@@ -40,7 +40,7 @@ body{
 	line-height:1.7;
 	letter-spacing:0px;
 	color: #3f3f3f;
-	background-image:url('breaktimeintro.png');
+	background-image:url('../breaktimeintro.png');
 	background-repeat:=no-repeat;
 	background-position:0px 0px;
 	-webkit-transition: background-position .3s ease;

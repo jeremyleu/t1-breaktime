@@ -1,4 +1,4 @@
-{
+var activities_arr = {
 	"activities": [
 		{
 			"level": "1",

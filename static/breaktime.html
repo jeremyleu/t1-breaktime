@@ -17,7 +17,7 @@
 				</div>
 				<input id = "complete_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Complete!"></input>
 				<input id = "somethingelse_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Something else, please!"></input>
-				<input id= "notnow_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Not now"></input>
+				<input id= "notnow_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Skip break"></input>
 			</div>
 			<div id = "bottomspace"></div>
 		</center>
@@ -40,6 +40,7 @@
 				var pathname = window.location.href;
 				var indexOfLevel = pathname.indexOf('level=');
 				var level = pathname.substring(indexOfLevel+6);
+				var currentLevel = 8;
 				$("#leveldisplay").text(level);
 				/*var suggestions;
 				$.getJSON('suggestions.json', {}, function(data) {
@@ -48,6 +49,27 @@
 				});*/
 				$("#suggestion #name").text(activities_arr.activities[level-1].name);
 				$("#suggestion #description").text(activities_arr.activities[level-1].description);
+
+				$('#somethingelse_btn').click(function() {
+					var oldLevel = level;
+					if(currentLevel > 1)
+					{
+						level = Math.floor((Math.random() * currentLevel) + 1);
+						while(oldLevel == level)
+						{
+							level = Math.floor((Math.random() * currentLevel) + 1);
+						}
+					}
+					$("#leveldisplay").text(level);
+					$("#suggestion #name").text(activities_arr.activities[level-1].name);
+					$("#suggestion #description").text(activities_arr.activities[level-1].description);
+				});
+				$('#complete_btn').click(function(){
+					window.location.href = "home.html";
+			   	});
+			   	$('#notnow_btn').click(function(){
+					window.location.href = "home.html";
+			   	});
 			};
 		</script>
 

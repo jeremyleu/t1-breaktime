@@ -69,6 +69,11 @@
 					this.value = "Pause";
 				}
 			});
+
+			$('#now_btn').click(function() {
+				var level = 8;
+				window.location.href = "breaktime.html?level=" + level;
+			});
 			//timer.registerHandler('play', {}, eventDemo);
 			//timer.registerHandler('pause', {}, eventDemo);
 			//timer.registerHandler('stop', {}, eventDemo);

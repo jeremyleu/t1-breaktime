@@ -3,6 +3,39 @@
 		<title>BREAKTIME - Activity Records</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/pagetemplate.css" />
+	  	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+   		 <script type="text/javascript">
+     	 google.load("visualization", "1.1", {packages:["bar"]});
+     	 google.setOnLoadCallback(drawStuff);
+
+   	   	function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Days', 'Points'],
+          ["Day 1", 20],
+          ["Day 2", 25],
+          ["Day 3", 30],
+          ["Day 4", 15],
+          ["Day 5", 45]
+        ]);
+
+        var options = {
+          title: 'Daily Experience',
+          width: 450,
+          legend: { position: 'none' },
+          chart: { subtitle: 'experience daily totals' },
+          axes: {
+            x: {
+              0: { side: 'top'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
 	</head>
 	<body>
 
@@ -12,9 +45,7 @@
 
 				<div align="justify" style="margin-top:-106px;">
 					<h1>ACTIVITY</h1>
-					<div>
-						<img src="ExperiencePoints.jpg">
-					</div>
+					<div id="top_x_div" style="width: 500px; height: 500px;"></div>
 					<h2>Level: 1</h2>
 					<h2>Experience Points: 200</h2>
 					<h2>Average Steps a Day: 3821</h2>

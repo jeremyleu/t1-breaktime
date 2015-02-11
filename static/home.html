@@ -16,6 +16,7 @@
 				</div>	
 			
 			<div id="countdown_timer" class = "jumbotron"><span style = "font-size:200px;"></span><br><h2>until your next break!</h2></div><br>
+			<input id = "now_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Breaktime now!"></input>
 			<input id = "playresume_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Pause"></input>
 			<input id= "reset_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Reset"></input>
 				
@@ -51,6 +52,7 @@
 
 
 			$('#reset_btn').click(function() {
+				$('#playresume_btn').prop('value', 'Pause');
 			 	timer.reset();
 			 	timer.start();
 			    //could insert code here to show play and hide pause.

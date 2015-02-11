@@ -1,0 +1,44 @@
+{
+	"activities": [
+		{
+			"level": "1",
+			"name": "Go get a glass of water.",
+			"description": "",
+		},
+		{
+			"level": "2",
+			"name": "Perform a lower back stretch.",
+			"description": "While sitting, grab the back of your thigh and bring one of your knees toward your chest while keeping your back straight. Hold for 30 seconds, then repeat for the other leg.",
+		},
+		{
+			"level": "3",
+			"name": "Level 3 activity name",
+			"description": "Level 3 activity description",
+		},
+		{
+			"level": "4",
+			"name": "Level 4 activity name",
+			"description": "Level 4 activity description",
+		},
+		{
+			"level": "5",
+			"name": "Level 5 activity name",
+			"description": "Level 5 activity description",
+		},
+		{
+			"level": "6",
+			"name": "Level 6 activity name",
+			"description": "Level 6 activity description",
+		},
+		{
+			"level": "7",
+			"name": "Level 7 activity name",
+			"description": "Level 7 activity description",
+		},
+		{
+			"level": "8",
+			"name": "Level 8 activity name",
+			"description": "Level 8 activity description",
+		}
+	]
+}

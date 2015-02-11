@@ -44,6 +44,17 @@
 	 		<span class = "stretch"></span>
  		</center>
 		</nav>
+
+		
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script type="text/javascript">
+			$('.levelscolumn').click(function(){
+				var levelstr = $(this).prop("id");
+				var level = levelstr.substring(10);
+				window.location.href = "breaktime.html?level=" + level;
+		   	});
+		</script>
+
 		<script type="text/javascript">
 
 			window.onload = function() {
@@ -51,6 +62,5 @@
 				$('#levelsrow div').css({'height':cw+'px'});
 			}
 		</script>
-		<script src="https://code.jquery.com/jquery.js"></script>
 	</body>
 </html>

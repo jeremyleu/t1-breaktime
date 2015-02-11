@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>BREAKTIME - Breaktime!</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/pagetemplate.css" />
+	</head>
+	<body>
+
+		
+		<center>
+			<div class="container" style="margin-top:394px" align = "justify">
+				<h1>Breaktime!</h1><br>
+				Why don't you try this level <span id = "leveldisplay"></span> activity?<br><br>
+				<div class = "jumbotron">
+					Do 20 jumping jacks.
+					
+				</div>
+				<input id = "complete_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Complete!"></input>
+				<input id = "somethingelse_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Something else, please!"></input>
+				<input id= "notnow_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Not now"></input>
+			</div>
+			<div id = "bottomspace"></div>
+		</center>
+		<nav class="nav-bar navbar navbar-fixed-bottom">
+ 		<center>
+ 			<div><a href="home.html"><img src = "navicons/home.png" class = "navicon"></a></div>
+	 		<div><a href="levels.html"><img src = "navicons/levels.png" class = "navicon"></a></div>
+	 		<div><a href="activity.html"><img src = "navicons/activity.png" class = "navicon"></a></div>
+	 		<div><a href="settings.html"><img src = "navicons/settings.png" class = "navicon"></a></div>
+	 		<div><a href="help.html"><img src = "navicons/help.png" class = "navicon"></a></div>
+	 		<span class = "stretch"></span>
+ 		</center>
+		</nav>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="suggestions.json"></script>
+		<script type="text/javascript">
+
+			window.onload = function() {
+				var pathname = window.location.href;
+				var indexOfLevel = pathname.indexOf('level=');
+				var level = pathname.substring(indexOfLevel+6);
+				$("#leveldisplay").text(level);
+				
+			};
+		</script>
+
+	</body>
+</html>

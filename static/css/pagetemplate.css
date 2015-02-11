@@ -31,7 +31,7 @@
 	src: url("../fonts/GeosansLight.ttf") /* TTF file for CSS3 browsers */
 }
 body{
-	font: 14px "DINRegular", georgia;
+	font: 20px "DINRegular", georgia;
 	line-height:1.7;
 	letter-spacing:0px;
 	color: #3f3f3f;
@@ -71,7 +71,6 @@ h1{
 }
 .nav-bar div {
 	display:inline-block;
-	*display:inline;
 	zoom:1;
 	width:18%;
 }

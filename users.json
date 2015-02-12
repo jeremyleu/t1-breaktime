@@ -4,12 +4,16 @@
 			"email": "j3leu@ucsd.edu",
 			"password": "password",
 			"timerpref": "00:30:00",
+			"timeremaining": "00:30:00",
+			"currentlevel": 1,
 			"current": false
 		},
 		{
 			"email": "idr@ucsd.edu",
 			"password": "password",
 			"timerpref": "00:30:00",
+			"timeremaining": "00:30:00",
+			"currentlevel": 1,
 			"current": false
 		}
 	]

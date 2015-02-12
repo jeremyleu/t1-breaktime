@@ -11,9 +11,14 @@
 			<div class="container" style="margin-top:500px">
 				<div align="justify" style="margin-top:-106px;">
 
-
-					You are currently logged in as susie123@gmail.com
- 					</br>
+          <h1>SETTINGS</h1>
+          <br>
+					{{#each users_arr}}
+            {{#if current}}
+              You are currently logged in as {{email}}.
+            {{/if}}
+          {{/each}}
+ 					</br><br>
  					Adjust Selected Activities:
  					<div class="checks">
   					<input type="checkbox" name="activity" value="1">activity 1<br>

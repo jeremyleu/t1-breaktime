@@ -12,7 +12,13 @@
 
 				<div align="justify" style="margin-top:-106px;">
 					<h1>HELP</h1>
-					<br >
+					<br>
+					{{#each users_arr}}
+						{{#if current}}
+							You are currently logged in as {{email}}.
+						{{/if}}
+					{{/each}}
+					<br><br>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in convallis ex, non volutpat mi. In mattis facilisis quam ac vulputate. Nullam pretium, dui at aliquet pellentesque, urna orci vulputate odio, ut ultricies tellus turpis et augue. Proin quis tortor leo. Suspendisse felis ex, viverra et lectus egestas, ultrices finibus nisl. Suspendisse potenti. Pellentesque in dui condimentum, aliquam augue ut, gravida turpis. Donec rhoncus lectus quis augue finibus, a fermentum ligula tristique. Aliquam porta nulla urna, at feugiat mi vulputate at. Nam ut odio posuere, condimentum urna id, aliquam purus. Ut pulvinar libero quis ipsum gravida rutrum.<br><br>
 					<!--maybe have a way to contact us for questions or techinical difficulties on the page-->
 					

@@ -4,6 +4,7 @@
  */
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
@@ -16,11 +17,13 @@ var help = require('./routes/help');
 var levels = require('./routes/levels');
 var register = require('./routes/register');
 var settings = require('./routes/settings');
+var registerHandler = require('./routes/registerHandler');
 
 // Example route
 // var user = require('./routes/user');
 
 var app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -51,6 +54,8 @@ app.get('/help', help.view);
 app.get('/levels', levels.view);
 app.get('/register', register.view);
 app.get('/settings', settings.view);
+app.post('/registerHandler', registerHandler.addUser);
+app.get('/registerHandler', home.view);
 //app.get('/project/:id', project.projectInfo);
 //app.get('/palette', palette.randomPalette);
 // Example route

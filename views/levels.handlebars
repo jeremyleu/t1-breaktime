@@ -12,6 +12,12 @@
 
 				<div align="justify" style="margin-top:-106px;">
 					<h1>LEVELS</h1>
+					<br>
+					{{#each users_arr}}
+						{{#if current}}
+							You are currently logged in as {{email}}.
+						{{/if}}
+					{{/each}}
 					<br><br>
 					<center>
 						<div class="row levelsrow" id = "levelsrow-1">

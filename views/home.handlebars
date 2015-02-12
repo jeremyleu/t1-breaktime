@@ -13,10 +13,21 @@
 
 				<div align="justify" style="margin-top:-106px;">
 					<h1>WELCOME</h1><br>
-					You are currently logged in as {{email}}.
+					{{#each users_arr}}
+						{{#if current}}
+							You are currently logged in as {{email}}.
+						{{/if}}
+					{{/each}}
 				</div>	
 			<br>
-			<div id="countdown_timer" class = "jumbotron"><span style = "font-size:200px;"></span><br><h2>until your next break!</h2></div><br>
+			<div id="countdown_timer" class = "jumbotron">
+				<span style = "font-size:200px;">
+					{{#each users_arr}}
+						{{#if current}}
+							{{timerpref}}
+						{{/if}}
+					{{/each}}
+				</span><br><h2>until your next break!</h2></div><br>
 			<input id = "now_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Breaktime now!"></input>
 			<input id = "playresume_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Pause"></input>
 			<input id= "reset_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Reset"></input>
@@ -46,8 +57,8 @@
 			  	alert(event.type);
 			};
 
-
-			timer = new Countdown();
+			var timepref = $('#countdown_timer span').text();
+			timer = new Countdown(timepref);
 			timer.init();
 			timer.start();
 

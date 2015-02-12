@@ -9,6 +9,17 @@ function Countdown()
     this.complete = true;
 }
 
+function Countdown(starttime)
+{
+    this.start_time = starttime;
+    this.end_time = "0:00:00";
+    this.target_id = "countdown_timer";
+    this.paused = true;
+    this.name = 'timer';
+    this.eventHandlers = {};
+    this.complete = true;
+}
+
 Countdown.prototype.target = function()
 {
     return $("#" + this.target_id);

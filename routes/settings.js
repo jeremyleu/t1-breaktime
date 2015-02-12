@@ -1,5 +1,5 @@
 var users = require("../users.json");
 
 exports.view = function(req, res){
-  	res.render('settings');
+  	res.render('settings', users);
 };

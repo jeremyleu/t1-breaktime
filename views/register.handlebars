@@ -10,14 +10,14 @@
 			<img src = "../images/logo.png" style = "width:500px"><br><br>
 			<div style = "background-color:#ffffff; padding:30px; border-radius: 20px; opacity: 0.8">
 				<h2>REGISTER</h2>
-				<form align = "justify">
+				<form align = "justify" method = "post" action = "/registerHandler">
 					<div id = "formtop" class = "form-group">
-						<label for = "emailfield">Email address: </label><br>
-						<input id = "emailfield" type = "email" class = "form-control" placeholder="Email"></input>
-						<label for = "passwordfield">Password: </label><br>
-						<input id = "passwordfield" type = "password" class = "form-control" placeholder="Password"></input>
-						<label for = "verifypasswordfield">Verify Password: </label><br>
-						<input id = "verifypasswordfield" type = "password" class = "form-control" placeholder="Verify Password"></input>
+						<label for = "email">Email address: </label><br>
+						<input id = "email" name = "email" type = "email" class = "form-control" placeholder="Email"></input>
+						<label for = "password">Password: </label><br>
+						<input id = "password" name = "password" type = "password" class = "form-control" placeholder="Password"></input>
+						<label for = "verifypassword">Verify Password: </label><br>
+						<input id = "verifypassword" type = "password" class = "form-control" placeholder="Verify Password"></input>
 						<br>
 						<label for = "timerinterval">Break Interval:</label><br>
 						<div class="btn-group">
@@ -25,13 +25,14 @@
 								Select Break Interval <span class="caret"></span>
 							</button>
 
-							<ul class="dropdown-menu" id = "timerinterval" role="menu">
+							<ul class="dropdown-menu" id = "timerintervalmenu" role="menu">
 								<li><a href = "#">20 min</a></li>
 								<li><a href = "#">30 min</a></li>
 								<li><a href = "#">40 min</a></li>
 								<li><a href = "#">50 min</a></li>
 								<li><a href = "#">60 min</a></li>
 							</ul>
+							<input type = "hidden" id = "timerinterval" name = "timerinterval" value = "00:20:00">
 						</div>
 						<!--<select>
 							<option value="interval">Choose Interval</option>
@@ -92,8 +93,8 @@
 		</select>-->
 					
 				<center>
-					<input id= "back" class = "btn btn-default btn-xlarge" type = "button" value = "Back" onClick="history.go(-1);return true;">
-					<input id= "next" class = "btn btn-default btn-xlarge" type = "submit" value = "Next" onClick="location.href = 'home'">
+					<input id= "back-btn" class = "btn btn-default btn-xlarge" type = "button" value = "Back" onClick="history.go(-1);return true;">
+					<input id= "next-btn" class = "btn btn-default btn-xlarge" type = "submit" value = "Next">
 				</center>
 				</form>
 				<br>
@@ -106,10 +107,31 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src = "js/bootstrap.min.js"></script>
 	<script type = "text/javascript">
-		$('#timerinterval li a').click(function(e) {
+		$('#timerintervalmenu li a').click(function(e) {
 			e.preventDefault();
 			var value = $(this).text();
 			$('#timerbutton').text(value);
+			if(value == '20 min')
+				$('#timerinterval').val("00:20:00");
+			else if(value == '30 min')
+				$('#timerinterval').val("00:30:00");
+			else if(value == '40 min')
+				$('#timerinterval').val("00:40:00");
+			else if(value == '50 min')
+				$('#timerinterval').val("00:50:00");
+			else if(value == '60 min')
+				$('#timerinterval').val("00:60:00");
+			
 		});
 	</script>
+	<!--<script>
+      $(document).ready(function(){
+        var user,pass;
+        $("#next-btn").click(function(e){
+          	user=$("#email").val();
+          	pass=$("#password").val();
+          	$.post("/registerHandler",{email: user,password: pass});
+        });
+      });
+    </script>-->
 </body>

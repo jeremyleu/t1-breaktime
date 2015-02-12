@@ -31,9 +31,6 @@
 	src: url("../fonts/GeosansLight.ttf") /* TTF file for CSS3 browsers */
 }
 
-input{
-	font: 12px "DINRegular", georgia;
-}
 
 body{
 	font: 14px "DINRegular", georgia;
@@ -149,6 +146,8 @@ label {
 input[type = "email"], input[type = "password"]{
 	font-size: 20px;
 	width: 90%;
+	line-height:20px;
+	padding:4px;
 }
 
 #formtop{
@@ -157,8 +156,13 @@ input[type = "email"], input[type = "password"]{
 	padding-left:10%;
 }
 
-ul li a{
+ul li a, #timerbutton{
 	font-size:20px;
+}
+
+input[type = "hidden"]
+{
+	display:none;
 }
 
 

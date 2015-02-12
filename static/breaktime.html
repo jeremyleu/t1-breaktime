@@ -12,12 +12,15 @@
 				<h1>Breaktime!</h1><br>
 				Why don't you try this level <span id = "leveldisplay"></span> activity?<br><br>
 				<div class = "jumbotron" id = "suggestion">
-					<span id = "name" style = "font-size:40px"></span><br>
-					<span id = "description"></span>
+					<span id = "description" style = "font-size:28px"></span><br><br>
+					<span id = "experience"></span>
 				</div>
-				<input id = "complete_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Complete!"></input>
-				<input id = "somethingelse_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Something else, please!"></input>
-				<input id= "notnow_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Skip break"></input>
+				<input id = "complete_btn" class = "btn btn-default btn-xlarge completion-btn" type = "button" value = "Complete!"></input>
+				<input id = "somethingelse_btn" class = "btn btn-default btn-xlarge completion-btn" type = "button" value = "Something else, please!"></input>
+				<input id = "notnow_btn" class = "btn btn-default btn-xlarge completion-btn" type = "button" value = "Skip break"></input>
+				<input id = "like_btn" class = "btn btn-default btn-xlarge btn-satisfaction" type = "button" value = "I enjoyed this break!"></input>
+				<input id = "dislike_btn" class = "btn btn-default btn-xlarge btn-satisfaction" type = "button" value = "I didn't enjoy this break."></input>
+				<input id = "return_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Thanks for your feedback. Click to start the timer until your next break."></input>
 			</div>
 			<div id = "bottomspace"></div>
 		</center>
@@ -47,8 +50,9 @@
 					suggestions = activities_arr;
 					console.log("hello");
 				});*/
-				$("#suggestion #name").text(activities_arr.activities[level-1].name);
+				//$("#suggestion #name").text(activities_arr.activities[level-1].name);
 				$("#suggestion #description").text(activities_arr.activities[level-1].description);
+				$("#suggestion #experience").text("This is worth " + activities_arr.activities[level-1].experiencePoints + " experience points.");
 
 				$('#somethingelse_btn').click(function() {
 					var oldLevel = level;
@@ -61,17 +65,31 @@
 						}
 					}
 					$("#leveldisplay").text(level);
-					$("#suggestion #name").text(activities_arr.activities[level-1].name);
+					//$("#suggestion #name").text(activities_arr.activities[level-1].name);
 					$("#suggestion #description").text(activities_arr.activities[level-1].description);
+					$("#suggestion #experience").text("This is worth " + activities_arr.activities[level-1].experiencePoints + " experience points.");
 				});
 				$('#complete_btn').click(function(){
-					window.location.href = "home.html";
+					$(".completion-btn").css("display","none");
+					$(".btn-satisfaction").css("display", "inline");
 			   	});
 			   	$('#notnow_btn').click(function(){
 					window.location.href = "home.html";
 			   	});
+			   	$('#like_btn').click(function(){
+			   		$(".btn-satisfaction").css("display", "none");
+			   		$("#return_btn").css("display", "inline");
+			   	});
+			   	$('#dislike_btn').click(function(){
+					$(".btn-satisfaction").css("display", "none");
+			   		$("#return_btn").css("display", "inline");
+			   	});
+			   	$('#return_btn').click(function(){
+					window.location.href = "home.html";
+			   	});
+
 			};
 		</script>
 
-	</body>`
+	</body>
 </html>

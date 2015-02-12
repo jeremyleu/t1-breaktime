@@ -2,43 +2,59 @@ var activities_arr = {
 	"activities": [
 		{
 			"level": "1",
-			"name": "Go get a glass of water.",
-			"description": "",
+			"description": "Get up and get a drink of water!",
+			"experiencePoints": "200",
+			"buttonColor": "#8080FF", 
+			"imageURL": "water drop"			
 		},
 		{
 			"level": "2",
-			"name": "Perform a lower back stretch.",
-			"description": "While sitting, grab the back of your thigh and bring one of your knees toward your chest while keeping your back straight. Hold for 30 seconds, then repeat for the other leg.",
+			"description": "Get up and do a quick 2 minute stretch. Flex your hands and wrists, extend your arms and legs, or give yourself a hug, what ever you have the space to do right now. Take a deep breath.",
+			"experiencePoints": "400",
+			"buttonColor": "#DOF37B",
+			"imageURL": "no idea"			
 		},
 		{
 			"level": "3",
-			"name": "Level 3 activity name",
-			"description": "Level 3 activity description",
+			"description": "Get up and quickly talk to someone nearby, be it about work or anything else. If in doubt, just ask them how they are doing.",
+			"experiencePoints": "500",
+			"buttonColor": "#C199D6",
+			"imageURL": "face"			
 		},
 		{
 			"level": "4",
-			"name": "Level 4 activity name",
-			"description": "Level 4 activity description",
+			"description": "Get up and do a quick 2 minute exercise. Squeeze a ball or towel, flex your calves and arms, or if you have the space, do some squats or anything more intense",
+			"experiencePoints": "800",
+			"buttonColor": "#E06666" ,
+			"imageURL": "dumbbell"			
 		},
 		{
 			"level": "5",
-			"name": "Level 5 activity name",
-			"description": "Level 5 activity description",
+			"description": "Go outside and get a breath of fresh air. Put your work aside for five minutes and see what it is like outside.",
+			"experiencePoints": "1000",
+			"buttonColor": "#CCE5E5",
+			"imageURL": "tree"			
 		},
 		{
 			"level": "6",
-			"name": "Level 6 activity name",
-			"description": "Level 6 activity description",
+			"description": "Get up and get a drink of water!",
+			"experiencePoints": "200",
+			"buttonColor": "#999999",
+			"imageURL": "sfdkhl"			
 		},
 		{
 			"level": "7",
-			"name": "Level 7 activity name",
-			"description": "Level 7 activity description",
+			"description": "Get up and get a drink of water!",
+			"experiencePoints": "200",
+			"buttonColor": "#999999",
+			"imageURL": "sfdkhl"			
 		},
 		{
 			"level": "8",
-			"name": "Level 8 activity name",
-			"description": "Level 8 activity description",
-		}
+			"description": "Get up and get a drink of water!",
+			"experiencePoints": "200",
+			"buttonColor": "#999999",
+			"imageURL": "sfdkhl"			
+		},
 	]
 }

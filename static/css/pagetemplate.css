@@ -260,3 +260,11 @@ td{
 	font-size:130px;
 	width:100%;
 }
+
+.btn-satisfaction{
+	display:none;
+}
+
+#return_btn{
+	display:none;
+}

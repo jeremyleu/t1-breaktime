@@ -2,7 +2,7 @@ var activities_arr = {
 	"activities": [
 		{
 			"level": "1",
-			"description": "Get up and get a drink of water!",
+			"name": "Get up and get a drink of water!",
 			"experiencePoints": "200",
 			"buttonColor": "#8080FF", 
 			"imageURL": "water drop"			

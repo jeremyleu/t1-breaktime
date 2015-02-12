@@ -7,23 +7,27 @@
     </head>
     <body>
         <center>
-          <div id = "content" align = "center">
-            <img src = "../images/logo.png" style = "width:500px"><br>
-            <h2>LOGIN</h2>
-            <form action = "/home">
-                Username: <input type="email" placeholder="Email">
+          <div id = "content" align = "center"> 
+            <img src = "../images/logo.png" style = "width:500px"><br><br>
+            <div style = "background-color:#ffffff; padding:30px; border-radius: 20px; opacity: 0.8">
+                <h2>LOGIN</h2>
+                <form align = "justify" action = "/home">
+                    <div id = "formtop" class = "form-group">
+                        <label for = "emailfield">Email address: </label><br>
+                        <input id = "emailfield" type = "email" class = "form-control" placeholder="Email"></input>
+                        <label for = "passwordfield">Password: </label><br>
+                        <input id = "passwordfield" type = "password" class = "form-control" placeholder="Password"></input>
+                        <br>
+                    </div>
+                    
+                <center>
+                    <input id= "submit" class = "btn btn-default btn-xlarge" type = "submit" value = "Submit">
+                </center>
+                </form>
                 <br>
-
-                Password: <input type="password" placeholder="Password">
-                </br>
-                </br>
-                <input id= "submit" class = "btn btn-default btn-xlarge" type = "submit" value = "Submit">
-            </form>
-            </br>
-            </br>
-            Don't have an account? <a href="register">Click</a> to register.
-            <div id = "bottomspace"></div>
-          </div>
+                Don't have an account? <a href = "/register">Click</a> to sign up.
+            </div>
         </center>
+        <div id = "bottomspace"></div>
       </body>
 </html>

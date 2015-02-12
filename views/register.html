@@ -1,73 +1,85 @@
 <!DOCTYPE html>
 <head>
-  <title>Breaktime - Register</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/entry.css" />
+	<title>BREAKTIME - Register</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/entry.css" />
 </head>
 <body>
-  <center>
-  <div id = "content" align = "center"> 
-    <img src = "logo.png" style = "width:500px"><br>
-    <h2>REGISTER</h2>
-    Username: <input type="email" placeholder="Your Email">
-    </br>
-    Password: <input type="password" placeholder="Password">
-    </br>
-    Verify Password: <input type="password" placeholder="Verify Password">
-    </br>
-    </br>
-  Work from 
-    <select>
-    <option value="Begin work hours">Hour</option>
-    <option value="1">1</option>
-    <option value="2">2 </option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-   </select>
-   :
-    <input type="minutes" placeholder="Min" size = "3">
-    <select>
-    <option value="AM">AM</option>
-    <option value="PM">PM</option>
+	<center>
+		<div id = "content" align = "center"> 
+			<img src = "../images/logo.png" style = "width:500px"><br>
+			<h2>REGISTER</h2>
+			<form>
+				Username: <input type="email" placeholder="Your Email">
+				<br>
+				Password: <input type="password" placeholder="Password">
+				<br>
+				Verify Password: <input type="password" placeholder="Verify Password">
+				<br>
+				<br>
+	<!--Work from 
+	<select>
+	<option value="Begin work hours">Hour</option>
+	<option value="1">1</option>
+	<option value="2">2 </option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	</select>
+	:
+	<input type="minutes" placeholder="Min" size = "3">
+	<select>
+	<option value="AM">AM</option>
+	<option value="PM">PM</option>
 
-   </select>
-   to 
+	</select>
+	to 
 
-      <select>
-    <option value="End work hours">Hour</option>
-    <option value="1">1</option>
-    <option value="2">2 </option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-   </select>
-   :
-    <input type="minutes" placeholder="Min" size = "3">
-    <select>
-    <option value="AM">AM</option>
-    <option value="PM">PM</option>
+	<select>
+	<option value="End work hours">Hour</option>
+	<option value="1">1</option>
+	<option value="2">2 </option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	</select>
+	:
+	<input type="minutes" placeholder="Min" size = "3">
+	<select>
+	<option value="AM">AM</option>
+	<option value="PM">PM</option>
 
-   </select>
-    </br>
-    </br>
-    <input id= "submit" class = "btn btn-default btn-xlarge" type = "button" value = "Back" onClick="history.go(-1);return true;">
-    <input id= "submit" class = "btn btn-default btn-xlarge" type = "button" value = "Next" onClick="location.href = 'home.html'">
-</div>
-<div id = "bottomspace">
-</center>
+	</select>-->
+				Select A Break Interval: 
+				<select>
+					<option value="interval">Choose Interval</option>
+					<option value="1">20 min</option>
+					<option value="2">30 min</option>
+					<option value="3">40 min</option>
+					<option value="4">50 min</option>
+					<option value="5">60 min</option>
+				</select>
+				<input id= "back" class = "btn btn-default btn-xlarge" type = "button" value = "Back" onClick="history.go(-1);return true;">
+				<input id= "next" class = "btn btn-default btn-xlarge" type = "submit" value = "Next" onClick="location.href = 'home'">
+			</form>
+			<br>
+			<br>
+			
+		</div>
+		<div id = "bottomspace"></div>
+	</center>
 </body>

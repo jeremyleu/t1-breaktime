@@ -140,3 +140,24 @@ td{
 	font-size:22px;
 	border-radius: 8px;
 }
+
+label {
+	font-weight: normal;
+	line-height: 24px;
+}
+
+input[type = "email"], input[type = "password"]{
+	font-size: 20px;
+	width: 90%;
+}
+
+#formtop{
+	width: 100%;
+	padding-left:10%;
+}
+
+ul li a{
+	font-size:20px;
+}
+
+

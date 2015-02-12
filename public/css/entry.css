@@ -40,7 +40,7 @@ body{
 	line-height:1.7;
 	letter-spacing:0px;
 	color: #3f3f3f;
-	background-image:url('../breaktimeintro.png');
+	background-image:url('../images/breaktimeintro.png');
 	background-repeat:=no-repeat;
 	background-position:0px 0px;
 	-webkit-transition: background-position .3s ease;
@@ -139,5 +139,4 @@ td{
 	padding:18px 28px;
 	font-size:22px;
 	border-radius: 8px;
-	outline:none;
 }

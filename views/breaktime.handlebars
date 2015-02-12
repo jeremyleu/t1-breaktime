@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>BREAKTIME - Breaktime!</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/pagetemplate.css" />
+	</head>
+	<body>
+
+		
+		<center>
+			<div class="container" style="margin-top:394px" align = "justify">
+				<h1>Breaktime!</h1><br>
+				Why don't you try this level <span id = "leveldisplay"></span> activity?<br><br>
+				<div class = "jumbotron" id = "suggestion">
+					<span id = "description" style = "font-size:28px"></span><br><br>
+					<span id = "experience"></span>
+				</div>
+				<input id = "complete_btn" class = "btn btn-default btn-xlarge completion-btn" type = "button" value = "Complete!"></input>
+				<input id = "somethingelse_btn" class = "btn btn-default btn-xlarge completion-btn" type = "button" value = "Something else, please!"></input>
+				<input id = "notnow_btn" class = "btn btn-default btn-xlarge completion-btn" type = "button" value = "Skip break"></input>
+				<input id = "like_btn" class = "btn btn-default btn-xlarge btn-satisfaction" type = "button" value = "I enjoyed this break!"></input>
+				<input id = "dislike_btn" class = "btn btn-default btn-xlarge btn-satisfaction" type = "button" value = "I didn't enjoy this break."></input>
+				<input id = "return_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Thanks for your feedback. Click to start the timer until your next break."></input>
+			</div>
+			<div id = "bottomspace"></div>
+		</center>
+		<nav class="nav-bar navbar navbar-fixed-bottom">
+ 		<center>
+ 			<div><a href="home"><img src = "navicons/home.png" class = "navicon"></a></div>
+	 		<div><a href="levels"><img src = "navicons/levels.png" class = "navicon"></a></div>
+	 		<div><a href="activity"><img src = "navicons/activity.png" class = "navicon"></a></div>
+	 		<div><a href="settings"><img src = "navicons/settings.png" class = "navicon"></a></div>
+	 		<div><a href="help"><img src = "navicons/help.png" class = "navicon"></a></div>
+	 		<span class = "stretch"></span>
+ 		</center>
+		</nav>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="suggestions.json"></script>
+		<script type="text/javascript">
+
+			window.onload = function() {
+
+				var pathname = window.location.href;
+				var indexOfLevel = pathname.indexOf('level=');
+				var level = pathname.substring(indexOfLevel+6);
+				var currentLevel = 8;
+				$("#leveldisplay").text(level);
+				/*var suggestions;
+				$.getJSON('suggestions.json', {}, function(data) {
+					suggestions = activities_arr;
+					console.log("hello");
+				});*/
+				//$("#suggestion #name").text(activities_arr.activities[level-1].name);
+				$("#suggestion #description").text(activities_arr.activities[level-1].description);
+				$("#suggestion #experience").text("This is worth " + activities_arr.activities[level-1].experiencePoints + " experience points.");
+
+				$('#somethingelse_btn').click(function() {
+					var oldLevel = level;
+					if(currentLevel > 1)
+					{
+						level = Math.floor((Math.random() * currentLevel) + 1);
+						while(oldLevel == level)
+						{
+							level = Math.floor((Math.random() * currentLevel) + 1);
+						}
+					}
+					$("#leveldisplay").text(level);
+					//$("#suggestion #name").text(activities_arr.activities[level-1].name);
+					$("#suggestion #description").text(activities_arr.activities[level-1].description);
+					$("#suggestion #experience").text("This is worth " + activities_arr.activities[level-1].experiencePoints + " experience points.");
+				});
+				$('#complete_btn').click(function(){
+					$(".completion-btn").css("display","none");
+					$(".btn-satisfaction").css("display", "inline");
+			   	});
+			   	$('#notnow_btn').click(function(){
+					window.location.href = "home";
+			   	});
+			   	$('#like_btn').click(function(){
+			   		$(".btn-satisfaction").css("display", "none");
+			   		$("#return_btn").css("display", "inline");
+			   	});
+			   	$('#dislike_btn').click(function(){
+					$(".btn-satisfaction").css("display", "none");
+			   		$("#return_btn").css("display", "inline");
+			   	});
+			   	$('#return_btn').click(function(){
+					window.location.href = "home";
+			   	});
+
+			};
+		</script>
+
+	</body>
+</html>

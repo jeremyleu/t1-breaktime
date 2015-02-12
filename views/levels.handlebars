@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>BREAKTIME - Levels</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/pagetemplate.css" />
+	</head>
+	<body>
+
+		
+		<center>
+			<div class="container" style="margin-top:500px">
+
+				<div align="justify" style="margin-top:-106px;">
+					<h1>LEVELS</h1>
+					<br><br>
+					<center>
+						<div class="row levelsrow" id = "levelsrow-1">
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-1"><div class = "jumbotron">1</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-2"><div class = "jumbotron">2</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-3"><div class = "jumbotron">3</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-4"><div class = "jumbotron">4</div></div>
+						</div>
+						<div class="row levelsrow" id = "levelsrow-2">
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-5"><div class = "jumbotron">5</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-6"><div class = "jumbotron">6</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-7"><div class = "jumbotron">7</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-8"><div class = "jumbotron">8</div></div>
+						</div>
+					</center>
+					
+			</div>
+			</div>
+			<div id = "bottomspace"></div>
+		</center>
+		<nav class="nav-bar navbar navbar-fixed-bottom">
+ 		<center>
+ 			<div><a href="home"><img src = "navicons/home.png" class = "navicon"></a></div>
+	 		<div><a href="levels"><img src = "navicons/levels.png" class = "navicon"></a></div>
+	 		<div><a href="activity"><img src = "navicons/activity.png" class = "navicon"></a></div>
+	 		<div><a href="settings"><img src = "navicons/settings.png" class = "navicon"></a></div>
+	 		<div><a href="help"><img src = "navicons/help.png" class = "navicon"></a></div>
+	 		<span class = "stretch"></span>
+ 		</center>
+		</nav>
+
+		
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script type="text/javascript">
+			$('.levelscolumn').click(function(){
+				var levelstr = $(this).prop("id");
+				var level = levelstr.substring(10);
+				window.location.href = "breaktime?level=" + level;
+		   	});
+		</script>
+
+		<script type="text/javascript">
+
+			window.onload = function() {
+				var cw = $('#levelsrow div').width();
+				$('#levelsrow div').css({'height':cw+'px'});
+			}
+		</script>
+	</body>
+</html>

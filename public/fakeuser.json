@@ -1,5 +1,11 @@
 {
 		"email": "guest@gmail.com",
 		"password": "password",
-		"timerpref": "00:30:00"
+		"workbegin": "09:00",
+		"workend" : "14:00",
+		"timerpref": "00:30:00",
+		"level" : "1",
+		"totexpoints" : "300",
+		"dailyexpoints_arr":[200, 200, 300, 400, 400],
+		"gpsmetrics" :""
 }

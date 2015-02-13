@@ -3,7 +3,15 @@
 		{
 			"email": "j3leu@ucsd.edu",
 			"password": "password",
-			"timerpref": "00:30:00"
+			"workbegin": "",
+			"workend" : "",
+			"timerpref": "00:30:00",
+			"level" : "",
+			"totexpoints" : "",
+			"dailyexpoints_arr":[],
+			"gpsmetrics" :""
+
+
 		}
 	]
 }

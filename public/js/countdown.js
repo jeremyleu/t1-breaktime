@@ -32,10 +32,16 @@ Countdown.prototype.update_target = function()
     hours = this.hours;
     if(minutes < 10 && hours > 0) minutes = "0" + minutes;
     if(seconds < 10) seconds = "0" + seconds;
+
     if(hours > 0)
     	$("#" + this.target_id + " span").text(hours + ":" + minutes + ":" + seconds);
     else
     	$("#" + this.target_id + " span").text(minutes + ":" + seconds);
+}
+
+Countdown.prototype.getTimeRemaining = function()
+{
+    return (hours + ":" + minutes + ":" + seconds);
 }
 
 Countdown.prototype.pause = function()
@@ -101,6 +107,8 @@ Countdown.prototype.reset = function(time)
     }
     this.complete = false;
 }
+
+
 
 Countdown.prototype.registerHandler = function(event, data, handler)
 {

@@ -55,7 +55,6 @@ app.get('/levels', levels.view);
 app.get('/register', register.view);
 app.get('/settings', settings.view);
 app.post('/registerHandler', registerHandler.addUser);
-app.get('/registerHandler', home.view);
 //app.get('/project/:id', project.projectInfo);
 //app.get('/palette', palette.randomPalette);
 // Example route

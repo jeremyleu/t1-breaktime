@@ -268,3 +268,7 @@ td{
 #return_btn{
 	display:none;
 }
+
+#timeleft{
+	display:inline;
+}

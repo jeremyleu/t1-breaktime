@@ -12,12 +12,13 @@
             <div style = "background-color:#ffffff; padding:30px; border-radius: 20px; opacity: 0.8">
                 <h2>LOGIN</h2>
                 <span id = "loginerror"></span>
-                <form align = "justify">
+                <form align = "justify" method = "post" action = "/registerHandler" id ="login">
                     <div id = "formtop" class = "form-group">
                         <label for = "emailfield">Email address: </label><br>
-                        <input id = "emailfield" type = "email" class = "form-control" placeholder="Email"></input>
+                        <input id = "emailfield" name = "email" type = "email" class = "form-control" placeholder="Email"></input>
                         <label for = "passwordfield">Password: </label><br>
-                        <input id = "passwordfield" type = "password" class = "form-control" placeholder="Password"></input>
+                        <input id = "passwordfield" name = "password" type = "password" class = "form-control" placeholder="Password"></input>
+                        <input type = "hidden" id = "timerinterval" name = "timerinterval" value = "00:20:00">
                         <br>
                     </div>
                     
@@ -34,7 +35,7 @@
         <script type = "text/javascript">
             $(document).ready(function(){
   
-                $('#submit_btn').click(function(){
+                $('#submit_btn').click(function(e){
                     var email = $('#emailfield').val();
                     var password = $("#passwordfield").val();
 
@@ -43,13 +44,14 @@
                         success: function(results){
                             console.log(email, password);
                             console.log(results.email, results.password);
-                            if(results.email == email && results.password == password){
-                                window.location.href = "/home";
-                                return true;
-                            }else{
+                            if(results.email != email || results.password != password){
+                                e.preventDefault();
                                 $("#loginerror").text("Login failed. Incorrect email or password.");
                                 return false;
                             }
+                            else
+                                $("#login").submit();
+
                         }
                     });
 

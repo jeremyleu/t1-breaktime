@@ -272,3 +272,8 @@ td{
 #timeleft{
 	display:inline;
 }
+
+label {
+	font-weight: normal;
+	line-height: 24px;
+}

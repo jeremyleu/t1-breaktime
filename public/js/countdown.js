@@ -37,6 +37,7 @@ Countdown.prototype.update_target = function()
     	$("#" + this.target_id + " span").text(hours + ":" + minutes + ":" + seconds);
     else
     	$("#" + this.target_id + " span").text(minutes + ":" + seconds);
+
 }
 
 Countdown.prototype.getTimeRemaining = function()
@@ -81,6 +82,9 @@ Countdown.prototype.tick = function()
         if(this.seconds <= 0 && this.minutes <=0 && this.hours <= 0 && !this.complete) {
             this.fire('complete');
             this.complete = true;
+            if(this.complete)
+                window.location.href="breaktime";
+  
         }
     }
     this.update_target();

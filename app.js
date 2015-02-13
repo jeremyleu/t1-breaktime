@@ -17,7 +17,9 @@ var help = require('./routes/help');
 var levels = require('./routes/levels');
 var register = require('./routes/register');
 var settings = require('./routes/settings');
+var editSettings = require('./routes/editSettings')
 var registerHandler = require('./routes/registerHandler');
+var logout = require('./routes/logout');
 
 // Example route
 // var user = require('./routes/user');
@@ -54,7 +56,9 @@ app.get('/help', help.view);
 app.get('/levels', levels.view);
 app.get('/register', register.view);
 app.get('/settings', settings.view);
+app.post('/editSettings', editSettings.editPreferences);
 app.post('/registerHandler', registerHandler.addUser);
+app.get('/logout', logout.logout);
 //app.get('/project/:id', project.projectInfo);
 //app.get('/palette', palette.randomPalette);
 // Example route

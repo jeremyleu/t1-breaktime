@@ -10,6 +10,7 @@
 			<img src = "../images/logo.png" style = "width:500px"><br><br>
 			<div style = "background-color:#ffffff; padding:30px; border-radius: 20px; opacity: 0.8">
 				<h2>REGISTER</h2>
+				<span id = "registererror"></span>
 				<form align = "justify" method = "post" action = "/registerHandler">
 					<div id = "formtop" class = "form-group">
 						<label for = "email">Email address: </label><br>
@@ -122,7 +123,15 @@
 			else if(value == '60 min')
 				$('#timerinterval').val("00:60:00");
 		});
+		$('#next-btn').click(function(e) {
+			if($('#password').val() != $('#verifypassword').val())
+			{
+				e.preventDefault();
+				$("#registererror").text("Registration failed. Passwords do not match.");
+			}
+		});
 	</script>
+
 	<!--<script>
       $(document).ready(function(){
         var user,pass;

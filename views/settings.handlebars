@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>BREAKTIME - Settings</title>
+		<title>BREAKTIME - Preferences</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/pagetemplate.css" />
 	</head>
@@ -11,7 +11,7 @@
 			<div class="container" style="margin-top:500px">
 				<div align="justify" style="margin-top:-106px;">
 
-          <h1>SETTINGS</h1>
+          <h1>PREFERENCES</h1>
           <br>
 					{{#each users_arr}}
             {{#if current}}
@@ -59,7 +59,7 @@
  					<select>
  					<option value="End work hours">Hour</option>
   					<option value="1">1</option>
-  					<option value="2">2 </option>
+  					<option value="2">2</option>
   					<option value="3">3</option>
  					<option value="4">4</option>
  					<option value="5">5</option>
@@ -92,12 +92,13 @@
  					<select>
   					<option value="AlarmType">Choose Alarm</option>
   					<option value="textMessage">Text Message Alert</option>
-  					<option value="email"> Email Alert</option>
+  					<option value="email">Email Alert</option>
+            <option value="vibrate">Vibrate</option>
   					<option value="Alarm">Classic Alarm</option>
  					</select>
  					<br>
  					<br>
- 					<input type="submit">
+ 					<a href="home"><input type="submit"></a>
 			</div>
 			</div>
 			<div id = "bottomspace"></div>

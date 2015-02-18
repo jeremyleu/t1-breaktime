@@ -1,0 +1,60 @@
+var activities_arr = {
+	"activities": [
+		{
+			"level": "1",
+			"description": "Get up and get a drink of water!",
+			"experiencePoints": "200",
+			"buttonColor": "#8080FF", 
+			"imageURL": "water drop"			
+		},
+		{
+			"level": "2",
+			"description": "Get up and do a quick 2 minute stretch. Flex your hands and wrists, extend your arms and legs, or give yourself a hug, what ever you have the space to do right now. Take a deep breath.",
+			"experiencePoints": "300",
+			"buttonColor": "#DOF37B",
+			"imageURL": "no idea"			
+		},
+		{
+			"level": "3",
+			"description": "Get up and quickly talk to someone nearby, be it about work or anything else. If in doubt, just ask them how they are doing.",
+			"experiencePoints": "350",
+			"buttonColor": "#C199D6",
+			"imageURL": "face"			
+		},
+		{
+			"level": "4",
+			"description": "Get up and do a quick 2 minute exercise. Squeeze a ball or towel, flex your calves and arms, or if you have the space, do some squats or anything more intense",
+			"experiencePoints": "400",
+			"buttonColor": "#E06666" ,
+			"imageURL": "dumbbell"			
+		},
+		{
+			"level": "5",
+			"description": "Get up from your desk and look out the nearest window for a minute",
+			"experiencePoints": "450",
+			"buttonColor": "#CCE5E5",
+			"imageURL": "eye"			
+		},
+		{
+			"level": "6",
+			"description": "Go find a staircase and climb it! (Counts as cardio and a leg exercise)",
+			"experiencePoints": "600",
+			"buttonColor": "#999999",
+			"imageURL": "sfdkhl"			
+		},
+		{
+			"level": "7",
+			"description": "Get up and visualize yourself doing your favorite active hobby. If you can, mimic some of the usual motions, a golf swing, some swimming strokes, think about how your body moves, what muscles you use, how you feel",
+			"experiencePoints": "650",
+			"buttonColor": "#CCE5E5",
+			"imageURL": "tree"			
+		},
+		{
+			"level": "8",
+			"description": "Go outside and get a breath of fresh air. Put your work aside for five minutes and see what it is like outside.",
+			"experiencePoints": "800",
+			"buttonColor": "#CCE5E5",
+			"imageURL": "tree"						
+		},
+	]
+}

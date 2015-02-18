@@ -7,5 +7,5 @@ exports.editPreferences = function(req, res){
 			users["users_arr"][i].timerpref = req.body.timerinterval;
 	}
 
-  	res.render('settings', users);
+  	res.render('home', users);
 };

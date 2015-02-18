@@ -8,6 +8,7 @@ exports.addUser = function(req, res){
 		"timerpref": req.body.timerinterval,
 		"timeremaining": req.body.timerinterval,
 		"currentlevel": 1,
+		"currentxp": 0,
 		"current": true
 	};
 	console.log(newUser);

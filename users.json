@@ -6,6 +6,7 @@
 			"timerpref": "00:30:00",
 			"timeremaining": "00:30:00",
 			"currentlevel": 1,
+			"currentxp": 0,
 			"current": false
 		},
 		{
@@ -14,6 +15,7 @@
 			"timerpref": "00:30:00",
 			"timeremaining": "00:30:00",
 			"currentlevel": 1,
+			"currentxp": 0,
 			"current": false
 		}
 	]

@@ -1,0 +1,76 @@
+var thresholds_arr = {
+	"thresholds": [
+		{
+			"level": 1,
+			"threshold": 0,
+		},
+		{
+			"level": 2,
+			"threshold": 200,
+		},
+		{
+			"level": 3,
+			"threshold": 600,		
+		},
+		{
+			"level": 4,
+			"threshold": 1000,
+		},
+		{
+			"level": 5,
+			"threshold": 1500,
+		},
+		{
+			"level": 6,
+			"threshold": 2000,
+		},
+		{
+			"level": 7,
+			"threshold": 2600,
+		},
+		{
+			"level": 8,
+			"threshold": 3100,		
+		},
+		{
+			"level": 9,
+			"threshold": 3750,	
+		},
+		{
+			"level": 10,
+			"threshold": 4400,	
+		},
+		{
+			"level": 11,
+			"threshold": 5050,	
+		},
+		{
+			"level": 12,
+			"threshold": 5750,	
+		},
+		{
+			"level": 13,
+			"threshold": 6550,					
+		},
+		{
+			"level": 14,
+			"threshold": 7250,		
+		},
+		{
+			"level": 15,
+			"threshold": 8050,		
+		},
+		{
+			"level": 16,
+			"threshold": 8900,					
+		},
+		{
+			"level": 17,
+			"threshold": 9800,		
+		},
+		{
+			"level": 18,
+			"threshold": 10200,		
+		},
+	]
+}

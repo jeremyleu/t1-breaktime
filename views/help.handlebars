@@ -10,12 +10,13 @@
 		<center>
 			<div class="container" style="margin-top:500px">
 
-				<div align="justify" style="margin-top:-106px;">
+				<div align="left" style="margin-top:-106px;">
 					<h1>ABOUT</h1>
 					<br>
 					{{#each users_arr}}
 						{{#if current}}
-							You are currently logged in as {{email}}. There is <div id = "countdown_timer" style = "display:inline"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></div> until your next scheduled break.
+							You are currently logged in as {{email}}. There is <div id = "countdown_timer" style = "display:inline"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></div> until your next scheduled break.<br>
+							You are currently level <span id = "level" style = "display:inline">{{currentlevel}}</span>. You have <span id = "xp" style = "display:inline">{{currentxp}}</span> experience points and need <span id = "xpremaining" style = "display:inline">0</span> experience points to progress to the next level.
 						{{/if}}
 					{{/each}}
 					<br><br>
@@ -37,7 +38,15 @@
 		</nav>
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/countdown.js" type="text/javascript"></script>
+		<script src="levelThresholds.json"></script>
 		<script type = "text/javascript">
+			window.onload = function() {
+				var currentExperience = parseInt($('#xp').text(),10);
+				var currentLevel = parseInt($('#level').text(),10);				
+				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+				var xpNeeded = nextThreshold - currentExperience;
+				$("#xpremaining").text(xpNeeded);
+			}
 			var timepref = $('#countdown_timer span').text();
 			var pathname = window.location.href;
 			var indexOfTimeRemaining = pathname.indexOf('timeremaining=');
@@ -46,10 +55,15 @@
 			else
 			{
 				var timeRemaining = pathname.substring(indexOfTimeRemaining+14);
-				if(timeToSeconds(timeRemaining) > timeToSeconds(timepref))
+				try{
+					if(timeToSeconds(timeRemaining) > timeToSeconds(timepref))
+						timer = new Countdown(timepref);
+					else
+						timer = new Countdown(timeRemaining);
+				} catch(e){
 					timer = new Countdown(timepref);
-				else
-					timer = new Countdown(timeRemaining);
+				}
+				
 			}
 			timer.init();
 			timer.start();
@@ -61,7 +75,10 @@
 			    var tempHours = parseInt(time_ary[0]);
 			    var tempMinutes = parseInt(time_ary[1]);
 			    var tempSeconds = parseInt(time_ary[2]);
-			    return tempHours * 3600 + tempMinutes * 60 + tempSeconds;
+			    if(isNaN(tempHours)||isNaN(tempMinutes)||isNaN(tempSeconds))
+			    	throw new TimeFormatException(time);
+			    else
+			    	return tempHours * 3600 + tempMinutes * 60 + tempSeconds;
 			}
 			$('#homelink').click(function(e) {
 				e.preventDefault();

@@ -261,6 +261,11 @@ td{
 	width:100%;
 }
 
+.levelscolumn div{
+	background-color:#d4f4fd;
+	color: #3f3f3f;
+}
+
 .btn-satisfaction{
 	display:none;
 }
@@ -276,4 +281,9 @@ td{
 label {
 	font-weight: normal;
 	line-height: 24px;
+}
+
+.disabled div {
+	background-color: #eeeeee;
+	color:#AAAAAA;
 }

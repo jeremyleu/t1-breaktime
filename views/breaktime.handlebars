@@ -56,7 +56,7 @@
 				var currentLevel = parseInt($('#level').text(),10);
 				if(currentLevel == 1)
 				{
-					$("#somethingelse_btn").prop("disabled",true);
+					$("#somethingelse_btn").css("display","none");
 				}
 				var indexOfLevel = pathname.indexOf('level=');
 				var currentExperience = parseInt($('#xp').text(),10);

@@ -28,6 +28,8 @@
 				<input id = "notnow_btn" class = "btn btn-default btn-xlarge completion-btn" type = "button" value = "Skip break"></input>
 				<input id = "like_btn" class = "btn btn-default btn-xlarge btn-satisfaction" type = "button" value = "I enjoyed this break!"></input>
 				<input id = "dislike_btn" class = "btn btn-default btn-xlarge btn-satisfaction" type = "button" value = "I didn't enjoy this break."></input>
+				<input id = "productive_btn" class = "btn btn-default btn-xlarge btn-productivity" type = "button" value = "I was productive before this break."></input>
+				<input id = "notproductive_btn" class = "btn btn-default btn-xlarge btn-productivity" type = "button" value = "I was not productive before this break."></input>
 				<form align = "justify" method = "post" action = "/activityComplete">
 					<input id = "xp2" name = "experienceGained" type = "hidden"></input>
 					<input id = "return_btn" class = "btn btn-default btn-xlarge" type = "submit" value = "Thanks for your feedback. Click to start the timer until your next break."></input>
@@ -106,10 +108,18 @@
 			   	});
 			   	$('#like_btn').click(function(){
 			   		$(".btn-satisfaction").css("display", "none");
-			   		$("#return_btn").css("display", "inline");
+			   		$(".btn-productivity").css("display", "inline");
 			   	});
 			   	$('#dislike_btn').click(function(){
 					$(".btn-satisfaction").css("display", "none");
+			   		$(".btn-productivity").css("display", "inline");
+			   	});
+			   	$('#productive_btn').click(function(){
+					$(".btn-productivity").css("display", "none");
+			   		$("#return_btn").css("display", "inline");
+			   	});
+			   	$('#notproductive_btn').click(function(){
+					$(".btn-productivity").css("display", "none");
 			   		$("#return_btn").css("display", "inline");
 			   	});
 			   	/*$('#return_btn').click(function(){

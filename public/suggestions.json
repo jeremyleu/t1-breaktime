@@ -51,7 +51,7 @@ var activities_arr = {
 		},
 		{
 			"level": "8",
-			"description": "Go find a staircase and climb it! (Is a cardio and leg exercise)",
+			"description": "Go find a staircase and climb it! (Works as cardio and leg exercise)",
 			"experiencePoints": "650",
 			"buttonColor": "#999999",
 			"imageURL": "sfdkhl"			
@@ -72,7 +72,11 @@ var activities_arr = {
 		},
 		{
 			"level": "11",
+<<<<<<< HEAD
+			"description": "ARM RAISES: Get up and do a quick 2 minute exercise. Stand with your shoulders back and back straight.  Lower your hands to your sides. With your arms straight, raise your arms to shoulder height in front of you. Lower your arms to your waist. Then, raise your arms out to your sides to shoulder height.  Return to starting position, then repeat the two motions ten times.",
+=======
 			"description": "Get up and do a quick 2 minute arm exercise.",
+>>>>>>> 775ce9282aeb5598e036282f7606ce3c0b47188b
 			"experiencePoints": "700",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -93,7 +97,11 @@ var activities_arr = {
 		},
 		{
 			"level": "14",
+<<<<<<< HEAD
+			"description": "SHOULDER SHRUGS: Get up and do a quick 2 minute exercise.  Stand with your legs shoulder width apart, back strait. Then, simply raise both shoulders up toward the ears while exhaling, hold for 5 seconds, then relax and take a deep inhale. Repeat for 15 reps. Be sure to breath to help release the stress in your upper back, shoulders and neck.",
+=======
 			"description": "Get up and do a quick 2 minute back exercise.",
+>>>>>>> 775ce9282aeb5598e036282f7606ce3c0b47188b
 			"experiencePoints": "800",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -114,10 +122,14 @@ var activities_arr = {
 		},
 		{
 			"level": "17",
+<<<<<<< HEAD
+			"description": "FULL BODY STRETCH: Get up and do a quick 2 minute stretch. Stand with your feet together and bend forward trying to touch your toes. Exhale fully and relax your legs and back. Then, while inhaling, slowely return to standing and reach your arms straight overhead.  Take a breath. Then, with your arms still overhead, breathe out as you bend your upper body slightly to the right. Take three slow breaths. Slowly return to the center. Repeat on the left side.",
+=======
 			"description": "FULL BODY STRETCH: Get up and do a quick 2 minute stretch. Hamstrings to standing fully extended.",
+>>>>>>> 775ce9282aeb5598e036282f7606ce3c0b47188b
 			"experiencePoints": "400",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
-		},
+		}
 	]
 }

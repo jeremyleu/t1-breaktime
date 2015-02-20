@@ -7,7 +7,7 @@
     $subject = 'Breaktime feedback';
     $human = $_POST['human'];
 			
-    $body = "From: $name\n E-Mail: $email\n Message:\n $message";
+    $body = "From: $contactName\n E-Mail: $contactEmail\n Message:\n $message";
 				
     if ($_POST['submit'] && $human == '4') {				 
         if (mail ($to, $subject, $body, $from)) { 

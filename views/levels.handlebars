@@ -24,28 +24,28 @@
 					<span id ="errormsg"></span>
 					<center>
 						<div class="row levelsrow" id = "levelsrow-1">
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-1"><div class = "jumbotron">1</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-2"><div class = "jumbotron">2</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-3"><div class = "jumbotron">3</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-4"><div class = "jumbotron">4</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-1"><div class = "jumbotron">1<div class = "activityxp" id = "xp-1"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-2"><div class = "jumbotron">2<div class = "activityxp" id = "xp-2"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-3"><div class = "jumbotron">3<div class = "activityxp" id = "xp-3"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-4"><div class = "jumbotron">4<div class = "activityxp" id = "xp-4"></div></div></div>
 						</div>
 						<div class="row levelsrow" id = "levelsrow-2">
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-5"><div class = "jumbotron">5</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-6"><div class = "jumbotron">6</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-7"><div class = "jumbotron">7</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-8"><div class = "jumbotron">8</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-5"><div class = "jumbotron">5<div class = "activityxp" id = "xp-5"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-6"><div class = "jumbotron">6<div class = "activityxp" id = "xp-6"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-7"><div class = "jumbotron">7<div class = "activityxp" id = "xp-7"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-8"><div class = "jumbotron">8<div class = "activityxp" id = "xp-8"></div></div></div>
 						</div>
 						<div class="row levelsrow" id = "levelsrow-3">
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-9"><div class = "jumbotron">9</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-10"><div class = "jumbotron">10</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-11"><div class = "jumbotron">11</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-12"><div class = "jumbotron">12</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-9"><div class = "jumbotron">9<div class = "activityxp" id = "xp-9"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-10"><div class = "jumbotron">10<div class = "activityxp" id = "xp-10"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-11"><div class = "jumbotron">11<div class = "activityxp" id = "xp-11"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-12"><div class = "jumbotron">12<div class = "activityxp" id = "xp-12"></div></div></div>
 						</div>
 						<div class="row levelsrow" id = "levelsrow-4">
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-13"><div class = "jumbotron">13</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-14"><div class = "jumbotron">14</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-15"><div class = "jumbotron">15</div></div>
-						  	<div class="col-md-3 levelscolumn" id ="levelsbox-16"><div class = "jumbotron">16</div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-13"><div class = "jumbotron">13<div class = "activityxp" id = "xp-13"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-14"><div class = "jumbotron">14<div class = "activityxp" id = "xp-14"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-15"><div class = "jumbotron">15<div class = "activityxp" id = "xp-15"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-16"><div class = "jumbotron">16<div class = "activityxp" id = "xp-16"></div></div></div>
 						</div>
 					</center>
 					
@@ -68,6 +68,7 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/countdown.js" type="text/javascript"></script>
 		<script src="levelThresholds.json"></script>
+		<script src="suggestions.json"></script>
 		<script type="text/javascript">
 			$('.levelscolumn').click(function(){
 				if(!$(this).hasClass("disabled"))
@@ -95,6 +96,11 @@
 				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
 				var xpNeeded = nextThreshold - currentExperience;
 				$("#xpremaining").text(xpNeeded);
+				for(j = 0; j < activities_arr.activities.length; j++)
+				{
+					$('#xp-' + (j+1)).text(activities_arr.activities[j].experiencePoints + " XP");
+
+				}
 			}
 		</script>
 		<script src="https://code.jquery.com/jquery.js"></script>

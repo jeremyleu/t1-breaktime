@@ -8,6 +8,7 @@ exports.completeActivity = function(req, res){
 		console.log(users["users_arr"][i]);
 		if(users["users_arr"][i].current)
 		{
+			users["users_arr"][i].breaks++;
 			users["users_arr"][i].currentxp += parseInt(req.body.experienceGained, 10);
 			console.log(req.body.experienceGained);
 			if(thresholds["thresholds_arr"][users["users_arr"][i].currentlevel].threshold <= users["users_arr"][i].currentxp)

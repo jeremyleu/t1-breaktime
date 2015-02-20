@@ -52,9 +52,11 @@
 						{{#if current}}
 							You are currently logged in as {{email}}. There is <div id = "countdown_timer" style = "display:inline"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></div> until your next scheduled break.<br>
 							You are currently level <span id = "level" style = "display:inline">{{currentlevel}}</span>. You have <span id = "xp" style = "display:inline">{{currentxp}}</span> experience points and need <span id = "xpremaining" style = "display:inline">0</span> experience points to progress to the next level.
+							<span class = "breaknumber" id = "breaknumberinvis" style = "display:none">{{breaks}}</span>
 						{{/if}}
 					{{/each}}<br><br>
-					This page is currently under construction.
+					This page is currently under construction.<br><br>
+					You've currently taken <span id = "breaknumber"></span> breaks.
 					<div id="top_x_div" style="width: 500px; height: 500px;"></div>
 					<!--<h2>Level: 1</h2>
 					<h2>Experience Points: 200</h2>
@@ -82,6 +84,8 @@
 		<script src="levelThresholds.json"></script>
 		<script type = "text/javascript">
 			window.onload = function() {
+				var numBreaks = parseInt($('#breaknumberinvis').text(),10);
+				$('#breaknumber').text(numBreaks);
 				var currentExperience = parseInt($('#xp').text(),10);
 				var currentLevel = parseInt($('#level').text(),10);				
 				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;

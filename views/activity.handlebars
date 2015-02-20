@@ -10,14 +10,17 @@
 
    	   	function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
+        {{#each users_arr}}
+					{{#if current}}
           ['Days', 'Points'],
-          ["Day 1", 20],
-          ["Day 2", 25],
-          ["Day 3", 30],
-          ["Day 4", 15],
-          ["Day 5", 45]
+          ["Day 1", 600],
+          ["Day 2", 800],
+          ["Day 3", 1000],
+          ["Day 4", 600],
+          ["Day 5", 1200]
         ]);
-
+        			{{/if}}
+					{{/each}}
         var options = {
           title: 'Daily Experience',
           width: 450,
@@ -52,12 +55,12 @@
 						{{/if}}
 					{{/each}}<br><br>
 					<div id="top_x_div" style="width: 500px; height: 500px;"></div>
-					<h2>Level: 1</h2>
+					<!--<h2>Level: 1</h2>
 					<h2>Experience Points: 200</h2>
 					<h2>Average Steps a Day: 3821</h2>
 					<h2>Distance: 2.1 miles</h2>
 					<h2>Calories: 131.7 cal</h2>
-					<h2>Active Minutes: 48 min</h2> 
+					<h2>Active Minutes: 48 min</h2> -->
 				    
 			</div>
 			</div>

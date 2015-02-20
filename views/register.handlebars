@@ -130,6 +130,11 @@
 				e.preventDefault();
 				$("#registererror").text("Registration failed. Passwords do not match.");
 			}
+			else if($('#password').val().length < 6)
+			{
+				e.preventDefault();
+				$("#registererror").text("Registration failed. Password must be at least 6 characters long.");
+			}
 		});
 	</script>
 

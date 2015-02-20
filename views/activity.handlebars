@@ -55,15 +55,22 @@
 							<span class = "breaknumber" id = "breaknumberinvis" style = "display:none">{{breaks}}</span>
 						{{/if}}
 					{{/each}}<br><br>
-					This page is currently under construction.<br><br>
-					You've currently taken <span id = "breaknumber"></span> breaks.
-					<div id="top_x_div" style="width: 500px; height: 500px;"></div>
+					
+					<div id="top_x_div" style="width: 500px; height: 500px;"></div><br><br>
 					<!--<h2>Level: 1</h2>
 					<h2>Experience Points: 200</h2>
 					<h2>Average Steps a Day: 3821</h2>
 					<h2>Distance: 2.1 miles</h2>
 					<h2>Calories: 131.7 cal</h2>
 					<h2>Active Minutes: 48 min</h2> -->
+					You have taken <span id = "breaknumber"></span>:<br>
+					{{#each users_arr}}
+						{{#if current}}
+							{{#each breaks_arr}}
+							You took a level {{level}} break, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
+							{{/each}}
+						{{/if}}
+					{{/each}}
 				    
 			</div>
 			</div>
@@ -84,8 +91,28 @@
 		<script src="levelThresholds.json"></script>
 		<script type = "text/javascript">
 			window.onload = function() {
+				/*if($('#enjoy').text() == "1")
+				{
+					$('#enjoyvisible').text("enjoyed it");
+				}
+				else
+				{
+					$('#enjoyvisible').text("did not enjoy it");
+				}
+				if($('#productive').text() == "1")
+				{
+					$('#productivevisible').text("was productive before the break");
+				}
+				else
+				{
+					$('#productivevisible').text("was not productive before the break");
+				}*/
 				var numBreaks = parseInt($('#breaknumberinvis').text(),10);
-				$('#breaknumber').text(numBreaks);
+				if(numBreaks == 1)
+					var breakText = numBreaks + " break";
+				else
+					var breakText = numBreaks + " breaks"
+				$('#breaknumber').text(breakText);
 				var currentExperience = parseInt($('#xp').text(),10);
 				var currentLevel = parseInt($('#level').text(),10);				
 				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;

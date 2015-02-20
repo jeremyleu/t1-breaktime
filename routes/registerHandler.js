@@ -10,6 +10,9 @@ exports.addUser = function(req, res){
 		"currentlevel": 1,
 		"currentxp": 0,
 		"breaks": 0,
+		"breaks_arr": [
+
+		],
 		"current": true
 	};
 	console.log(newUser);

@@ -32,6 +32,9 @@
 				<input id = "notproductive_btn" class = "btn btn-default btn-xlarge btn-productivity" type = "button" value = "I was not productive before this break."></input>
 				<form align = "justify" method = "post" action = "/activityComplete">
 					<input id = "xp2" name = "experienceGained" type = "hidden"></input>
+					<input id = "level2" name = "levelDone" type = "hidden"></input>
+					<input id = "enjoyedactivity" name = "satisfaction" type = "hidden"></input>
+					<input id = "productive" name = "productivity" type = "hidden"></input>
 					<input id = "return_btn" class = "btn btn-default btn-xlarge" type = "submit" value = "Thanks for your feedback. Click to start the timer until your next break."></input>
 				</form>
 			</div>
@@ -74,6 +77,7 @@
 					level = currentLevel;
 				$("#leveldisplay").text(level);
 				$("#xp2").val(activities_arr.activities[level-1].experiencePoints);
+				$("#level2").val(level);
 				/*var suggestions;
 				$.getJSON('suggestions.json', {}, function(data) {
 					suggestions = activities_arr;
@@ -95,6 +99,7 @@
 					}
 					$("#leveldisplay").text(level);
 					$("#xp2").val(activities_arr.activities[level-1].experiencePoints);
+					$("#level2").val(level);
 					//$("#suggestion #name").text(activities_arr.activities[level-1].name);
 					$("#suggestion #description").text(activities_arr.activities[level-1].description);
 					$("#suggestion #experience").text("This is worth " + activities_arr.activities[level-1].experiencePoints + " experience points.");
@@ -109,18 +114,22 @@
 			   	$('#like_btn').click(function(){
 			   		$(".btn-satisfaction").css("display", "none");
 			   		$(".btn-productivity").css("display", "inline");
+			   		$("#enjoyedactivity").val("true");
 			   	});
 			   	$('#dislike_btn').click(function(){
 					$(".btn-satisfaction").css("display", "none");
 			   		$(".btn-productivity").css("display", "inline");
+			   		$("#enjoyedactivity").val("false");
 			   	});
 			   	$('#productive_btn').click(function(){
 					$(".btn-productivity").css("display", "none");
 			   		$("#return_btn").css("display", "inline");
+			   		$("#productive").val("true");
 			   	});
 			   	$('#notproductive_btn').click(function(){
 					$(".btn-productivity").css("display", "none");
 			   		$("#return_btn").css("display", "inline");
+			   		$("#productive").val("false");
 			   	});
 			   	/*$('#return_btn').click(function(){
 					$.post("activityComplete", {experienceGained: activities_arr.activities[level-1].experiencePoints});

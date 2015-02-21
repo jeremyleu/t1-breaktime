@@ -15,8 +15,7 @@
 					<h1>WELCOME</h1><br>
 					{{#each users_arr}}
 						{{#if current}}
-							You are currently logged in as {{email}}. <br>
-							You are currently level <span id = "level" style = "display:inline">{{currentlevel}}</span>. You have <span id = "xp" style = "display:inline">{{currentxp}}</span> experience points and need <span id = "xpremaining" style = "display:inline">0</span> experience points to progress to the next level.
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
 						{{/if}}
 					{{/each}}
 				</div>	
@@ -96,6 +95,7 @@
 
 			$('#reset_btn').click(function() {
 				$('#playresume_btn').prop('value', 'Pause');
+				timer = new Countdown(timepref);
 			 	timer.reset();
 			 	timer.start();
 			    //could insert code here to show play and hide pause.
@@ -137,6 +137,14 @@
 			$('#helplink').click(function(e) {
 				e.preventDefault();
 				window.location.href = "help?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('#usernamelink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "settings?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('#timerlink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "home?timeremaining=" + timer.getTimeRemaining();
 			});
 			//timer.registerHandler('play', {}, eventDemo);
 			//timer.registerHandler('pause', {}, eventDemo);

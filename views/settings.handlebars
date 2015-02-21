@@ -13,12 +13,12 @@
 
 				<h1>PREFERENCES</h1>
 				<br>
-				{{#each users_arr}}
-					{{#if current}}
-						You are currently logged in as {{email}}. There is <div id = "countdown_timer" style = "display:inline"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></div> until your next scheduled break.<br>
-						You are currently level <span id = "level" style = "display:inline">{{currentlevel}}</span>. You have <span id = "xp" style = "display:inline">{{currentxp}}</span> experience points and need <span id = "xpremaining" style = "display:inline">0</span> experience points to progress to the next level.
-					{{/if}}
-				{{/each}}
+					{{#each users_arr}}
+						{{#if current}}
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div><div id = "fixed_timer">
+							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></a></div></div>
+						{{/if}}
+					{{/each}}
 				<br><br>
 
 				<form method = "get" action = "/logout">
@@ -132,6 +132,14 @@
 		$('#helplink').click(function(e) {
 			e.preventDefault();
 			window.location.href = "help?timeremaining=" + timer.getTimeRemaining();
+		});
+		$('#usernamelink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "settings?timeremaining=" + timer.getTimeRemaining();
+		});
+		$('#timerlink').click(function(e) {
+			e.preventDefault();
+			window.location.href = "home?timeremaining=" + timer.getTimeRemaining();
 		});
 	</script>
 	<script type = "text/javascript">

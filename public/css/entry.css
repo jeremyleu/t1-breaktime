@@ -38,7 +38,7 @@ body{
 	letter-spacing:0px;
 	color: #3f3f3f;
 	background-image:url('../images/breaktimeintro.png');
-	background-repeat:=no-repeat;
+	background-repeat:no-repeat;
 	background-position:0px 0px;
 	-webkit-transition: background-position .3s ease;
 	-moz-transition: background-position .3s ease;

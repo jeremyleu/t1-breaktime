@@ -45,12 +45,12 @@
                         success: function(results){
                             console.log(email, password);
                             console.log(results.email, results.password);
-                            if(results.email != email || results.password != password){
+                            /*if(results.email != email || results.password != password){
                                 e.preventDefault();
                                 $("#loginerror").text("Login failed. Incorrect email or password.");
                                 return false;
                             }
-                            else
+                            else*/
                                 $("#login").submit();
 
                         }

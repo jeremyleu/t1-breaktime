@@ -327,6 +327,10 @@ label {
 	display:none;
 }
 
+#timerintervalmenu {
+	font-size:22px;
+}
+
 @media only screen and (max-device-width: 480px)
 {
 	body{
@@ -367,6 +371,9 @@ label {
 	}
 	#usernametext{
 		display:none;
+	}
+	#timerintervalmenu {
+		font-size:33px;
 	}
 }
 @media all and (max-height: 615px){

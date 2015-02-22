@@ -327,8 +327,12 @@ label {
 	display:none;
 }
 
-#timerintervalmenu {
+#timerintervalmenu, #timerbutton {
 	font-size:22px;
+}
+
+#timerintervallabel {
+	font-size:24px;
 }
 
 @media only screen and (max-device-width: 480px)
@@ -372,8 +376,11 @@ label {
 	#usernametext{
 		display:none;
 	}
-	#timerintervalmenu {
+	#timerintervalmenu, #timerbutton {
 		font-size:33px;
+	}
+	#timerintervallabel {
+		font-size:36px;
 	}
 }
 @media all and (max-height: 615px){

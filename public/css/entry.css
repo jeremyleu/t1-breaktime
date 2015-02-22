@@ -158,6 +158,11 @@ input[type = "hidden"]
 	display:none;
 }
 
+#logo
+{
+	width:500px;
+}
+
 @media screen and (max-width: 750px) {
     #content{
     	padding-top:240px;
@@ -177,10 +182,11 @@ input[type = "hidden"]
 	body
 	{
 		background-size: 1300px 1000px;
+		background-position:0px -50px;
 	}
 	#logo
 	{
-		width:400px;
+		width:90%;
 	}
 	#formtop
 	{

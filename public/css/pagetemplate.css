@@ -317,6 +317,13 @@ label {
 #timerlink {
 	color:#fffca1;
 }
+
+@media only screen and (max-device-width: 480px)
+{
+	body{
+		font: 30px "DINRegular", georgia;
+	}
+}
 @media all and (max-height: 615px){
 	#fixed_timer {
 		bottom:60px;

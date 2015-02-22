@@ -363,6 +363,7 @@ label {
 	}
 	#usernametextshort{
 		display:inline;
+		font-size:30px;
 	}
 	#usernametext{
 		display:none;

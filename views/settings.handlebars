@@ -23,7 +23,8 @@
 				<form method = "get" action = "/logout">
 					{{#each users_arr}}
 						{{#if current}}
-							<button id= "logout-btn" class = "btn btn-default btn-xlarge" type = "submit">Current account: {{email}}. Click to logout.</button>
+							Current account: {{email}}.<br>
+							<button id= "logout-btn" class = "btn btn-default btn-xlarge" type = "submit">Click to logout.</button>
 						{{/if}}
 					{{/each}}
 					

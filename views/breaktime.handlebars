@@ -32,12 +32,13 @@
 				<div class = "btn-productivity">Were you productive before this break? <br><br></div>
 				<input id = "productive_btn" class = "btn btn-default btn-xlarge btn-productivity" type = "button" value = "Yes"></input>
 				<input id = "notproductive_btn" class = "btn btn-default btn-xlarge btn-productivity" type = "button" value = "No"></input>
+				<div class = "btn-return">Were you productive before this break? <br><br></div>
 				<form align = "justify" method = "post" action = "/activityComplete">
 					<input id = "xp2" name = "experienceGained" type = "hidden"></input>
 					<input id = "level2" name = "levelDone" type = "hidden"></input>
 					<input id = "enjoyedactivity" name = "satisfaction" type = "hidden"></input>
 					<input id = "productive" name = "productivity" type = "hidden"></input>
-					<input id = "return_btn" class = "btn btn-default btn-xlarge" type = "submit" value = "Click to restart the timer."></input>
+					<input id = "return_btn" class = "btn btn-default btn-xlarge btn-return" type = "submit" value = "Click to restart the timer."></input>
 				</form>
 			</div>
 			<div id = "bottomspace"></div>
@@ -125,12 +126,12 @@
 			   	});
 			   	$('#productive_btn').click(function(){
 					$(".btn-productivity").css("display", "none");
-			   		$("#return_btn").css("display", "inline");
+			   		$("#btn-return").css("display", "inline");
 			   		$("#productive").val("true");
 			   	});
 			   	$('#notproductive_btn').click(function(){
 					$(".btn-productivity").css("display", "none");
-			   		$("#return_btn").css("display", "inline");
+			   		$("#btn-return").css("display", "inline");
 			   		$("#productive").val("false");
 			   	});
 			   	/*$('#return_btn').click(function(){

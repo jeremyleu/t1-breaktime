@@ -10,18 +10,18 @@
         <center>
           <div id = "content" align = "center"> 
             <img src = "../images/logo.png" id = "logo"><br><br>
-            <div style = "background-color:#ffffff; padding:30px; border-radius: 20px; opacity: 0.8">
+            <div class = "desktopcontainer">
                  <center><div style = "line-height:28px;" id = "blurb">BREAKTIME is the app designed to get you up and out of your chair!<br></div></center>
                 <h2>LOGIN</h2>
                 <span id = "loginerror"></span>
                 <form align = "left" method = "post" action = "/registerHandler" id ="login">
                     <div id = "formtop" class = "form-group">
-                        <label for = "emailfield">Email address: </label><br>
+                        <label for = "emailfield">Email address: </label><br class = "desktoponly">
                         <input id = "emailfield" name = "email" type = "email" class = "form-control" placeholder="Email"></input>
-                        <label for = "passwordfield">Password: </label><br>
+                        <label for = "passwordfield">Password: </label><br class = "desktoponly">
                         <input id = "passwordfield" name = "password" type = "password" class = "form-control" placeholder="Password"></input>
                         <input type = "hidden" id = "timerinterval" name = "timerinterval" value = "00:20:00">
-                        <br>
+                        <br class = "desktoponly">
                     </div>
                     
                 <center>

@@ -163,6 +163,14 @@ input[type = "hidden"]
 	width:500px;
 }
 
+.desktopcontainer
+{
+	background-color:#ffffff; 
+	padding:30px; 
+	border-radius: 20px; 
+	opacity: 0.8;
+}
+
 @media screen and (max-width: 750px) {
     #content{
     	padding-top:240px;
@@ -204,6 +212,11 @@ input[type = "hidden"]
 	input[type = "email"], input[type = "password"]{
 		width:100%;
 	}
-
+	#desktoponly{
+		display:none;
+	}
+	#desktopcontainer{
+		padding:10px;
+	}
 }
 

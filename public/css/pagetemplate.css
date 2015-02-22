@@ -321,6 +321,12 @@ label {
 #description {
 	font-size:28px;
 }
+#usernametext {
+	display:inline;
+}
+#usernametextshort {
+	display:none;
+}
 
 @media only screen and (max-device-width: 480px)
 {
@@ -351,6 +357,15 @@ label {
 	}
 	.plaintext {
 		line-height:1.7;
+	}
+	.activityxp {
+		font-size:24px;
+	}
+	#usernametextshort{
+		display:inline;
+	}
+	#usernametext{
+		display:none;
 	}
 }
 @media all and (max-height: 615px){

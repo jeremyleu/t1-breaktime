@@ -171,6 +171,11 @@ input[type = "hidden"]
 	opacity: 0.8;
 }
 
+#breakintervaldescription
+{
+	font-size:16px;
+}
+
 @media screen and (max-width: 750px) {
     #content{
     	padding-top:240px;
@@ -231,6 +236,10 @@ input[type = "hidden"]
 
 	ul li a, #timerbutton{
 		font-size:14px;
+	}
+	#breakintervaldescription
+	{
+		font-size:12px;
 	}
 }
 

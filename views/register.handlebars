@@ -9,7 +9,7 @@
 	<center>
 		<div id = "content" align = "center"> 
 			<img src = "../images/logo.png" id = "logo"><br><br>
-			<div style = "background-color:#ffffff; padding:30px; border-radius: 20px; opacity: 0.8">
+			<div class = "desktopcontainer">
 				<h2>REGISTER</h2>
 				<span id = "registererror"></span>
 				<form align = "left" method = "post" action = "/registerHandler">
@@ -21,7 +21,7 @@
 						<label for = "verifypassword">Verify Password: </label><br class = "desktoponly">
 						<input id = "verifypassword" type = "password" class = "form-control" placeholder="Verify Password"></input>
 						<br>
-						Break Interval:<br><div style = "font-size:16px">(How long would you like to work for in one sitting without being interrupted?)</div><br>
+						Break Interval:<br><div id = "breakintervaldescription">(How long would you like to work for in one sitting without being interrupted?)</div><br>
 						<div class="btn-group">
 							<button class="btn btn-default btn-lg dropdown-toggle" id = "timerbutton" type="button" data-toggle="dropdown" aria-expanded="false">
 								Select Break Interval <span class="caret"></span>

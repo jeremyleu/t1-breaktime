@@ -387,6 +387,9 @@ label {
 	#timerintervallabel {
 		font-size:36px;
 	}
+	#timerintervalmenu li {
+		height:66px;
+	}
 }
 @media all and (max-height: 615px){
 	#fixed_timer {

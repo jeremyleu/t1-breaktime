@@ -329,8 +329,16 @@ label {
 	h1{
 		font-size:42px;
 	}
+	h2{
+		font-size:36px;
+	}
 	#fixed-timer {
 		font-size:40px;
+	}
+	.btn-xlarge {
+		padding:27px 42px;
+		font-size:33px;
+		border-radius: 12px;
 	}
 }
 @media all and (max-height: 615px){

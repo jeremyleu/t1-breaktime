@@ -181,7 +181,7 @@ input[type = "hidden"]
 	}
 	body
 	{
-		background-size: 1300px 1000px;
+		background-size: 1300px 2750px;
 		background-position:0px -50px;
 	}
 	#logo
@@ -191,6 +191,10 @@ input[type = "hidden"]
 	#formtop
 	{
 		padding:none;
+	}
+	#blurb
+	{
+		display:none;
 	}
 
 }

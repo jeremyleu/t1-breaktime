@@ -267,11 +267,7 @@ td{
 	color: #3f3f3f;
 }
 
-.btn-satisfaction, .btn-productivity {
-	display:none;
-}
-
-#return_btn{
+.btn-satisfaction, .btn-productivity, .btn-return {
 	display:none;
 }
 
@@ -335,6 +331,7 @@ label {
 {
 	body{
 		font: 30px "DINRegular", georgia;
+		background:url('../images/background-mobile.png') no-repeat 0px 0px;
 	}
 	#description{
 		font-size:36px;

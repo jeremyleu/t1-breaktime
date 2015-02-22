@@ -192,7 +192,8 @@ input[type = "hidden"]
 	{
 		background-size: 1300px 2750px;
 		background-position:0px -800px;
-		line-height:1.4;
+		line-height:1.1;
+		font:14px "DINRegular", georgia;;
 	}
 	#logo
 	{
@@ -211,6 +212,9 @@ input[type = "hidden"]
 	}
 	input[type = "email"], input[type = "password"]{
 		width:100%;
+	}
+	input[type = "email"]{
+		margin-bottom:10px;
 	}
 	.desktoponly{
 		display:none;

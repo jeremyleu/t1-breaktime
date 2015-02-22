@@ -298,9 +298,10 @@ label {
 	right:10px;
 	top:290px;
 	color:#FFFFFF;
+	display:inline;
 }
 
-#usernametext a {
+#usernametext a, #usernametextshort a {
 	color:#fffca1;
 }
 #fixed_timer {
@@ -321,10 +322,12 @@ label {
 #description {
 	font-size:28px;
 }
-#usernametext {
-	display:inline;
-}
+
 #usernametextshort {
+	position:absolute;
+	right:10px;
+	top:290px;
+	color:#FFFFFF;
 	display:none;
 }
 
@@ -361,7 +364,7 @@ label {
 	.activityxp {
 		font-size:24px;
 	}
-	#usernametextshort{
+	#usernametextshort {
 		display:inline;
 		font-size:30px;
 	}

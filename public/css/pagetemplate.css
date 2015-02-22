@@ -337,7 +337,7 @@ label {
 }
 
 #timerintervalmenu li {
-	height:36px;
+	height:48px;
 }
 
 @media only screen and (max-device-width: 480px)

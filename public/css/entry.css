@@ -183,7 +183,8 @@ input[type = "hidden"]
 	body
 	{
 		background-size: 1300px 2750px;
-		background-position:0px -50px;
+		background-position:0px -800px;
+		line-height:1.4;
 	}
 	#logo
 	{
@@ -196,6 +197,12 @@ input[type = "hidden"]
 	#blurb
 	{
 		display:none;
+	}
+	label{
+		display:none;
+	}
+	input[type = "email"], input[type = "password"]{
+		width:100%;
 	}
 
 }

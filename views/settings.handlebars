@@ -19,7 +19,6 @@
 							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></a></div></div>
 						{{/if}}
 					{{/each}}
-				<br><br>
 
 				<form method = "get" action = "/logout">
 					{{#each users_arr}}
@@ -31,13 +30,13 @@
 				</form><br>
 
 				<form align = "justify" method = "post" action = "/editSettings">
-					<label for = "timerinterval">Break Interval:</label><br>
+					<label for = "timerinterval" style = "font-size:22px; padding-bottom:10px">Break Interval:</label><br>
 					<div class="btn-group">
-						<button class="btn btn-default btn-lg dropdown-toggle" id = "timerbutton" type="button" data-toggle="dropdown" aria-expanded="false">
+						<button class="btn btn-default btn-lg dropdown-toggle" id = "timerbutton" type="button" data-toggle="dropdown" aria-expanded="false" style = "font-size: 22px">
 							Select Break Interval <span class="caret"></span>
 						</button>
 
-						<ul class="dropdown-menu" id = "timerintervalmenu" role="menu">
+						<ul class="dropdown-menu" id = "timerintervalmenu" role="menu" style = "font-size:22px">
 							<li><a href = "#">20 min</a></li>
 							<li><a href = "#">30 min</a></li>
 							<li><a href = "#">40 min</a></li>

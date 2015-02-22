@@ -333,6 +333,7 @@ label {
 
 #timerintervallabel {
 	font-size:24px;
+	margin-bottom:20px;
 }
 
 @media only screen and (max-device-width: 480px)

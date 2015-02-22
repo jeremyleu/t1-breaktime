@@ -342,7 +342,7 @@ label {
 		border-radius: 12px;
 	}
 	.plaintext {
-		line-height:130%;
+		line-height:2.0;
 	}
 }
 @media all and (max-height: 615px){

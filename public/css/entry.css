@@ -214,10 +214,9 @@ input[type = "hidden"]
 	}
 	input[type = "email"], input[type = "password"]{
 		width:100%;
-	}
-	input[type = "email"]{
 		margin-bottom:20px;
 	}
+
 	.desktoponly{
 		display:none;
 	}

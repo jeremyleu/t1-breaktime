@@ -168,3 +168,11 @@ input[type = "hidden"]
     }
 }
 
+@media only screen and (max-device-width: 480px)
+{
+	#content
+	{
+		width:90%;
+	}
+}
+

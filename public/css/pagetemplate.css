@@ -340,9 +340,11 @@ label {
 		padding:27px 42px;
 		font-size:33px;
 		border-radius: 12px;
+		margin-bottom:20px;
+		max-width:100%;
 	}
 	.plaintext {
-		line-height:2.0;
+		line-height:1.7;
 	}
 }
 @media all and (max-height: 615px){

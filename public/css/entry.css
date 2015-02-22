@@ -193,7 +193,7 @@ input[type = "hidden"]
 		background-size: 1300px 2750px;
 		background-position:0px -800px;
 		line-height:1.1;
-		font:14px "DINRegular", georgia;;
+		font:10px "DINRegular", georgia;;
 	}
 	#logo
 	{
@@ -221,6 +221,11 @@ input[type = "hidden"]
 	}
 	.desktopcontainer{
 		padding:10px;
+	}
+	.btn-xlarge {
+		padding:12px 18px;
+		font-size:14px;
+		border-radius: 5px;
 	}
 }
 

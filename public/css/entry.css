@@ -176,16 +176,16 @@ input[type = "hidden"]
 	}
 	body
 	{
-		background-size: 650px 500px;
+		background-size: 1300px 1000px;
 	}
 	#logo
 	{
-		width:90%;
+		width:400px;
 	}
 	#formtop
 	{
 		padding:none;
 	}
-	
+
 }
 

@@ -186,7 +186,7 @@ input[type = "hidden"]
 	#content
 	{
 		width:90%;
-		padding-top:50px;
+		padding-top:20px;
 	}
 	body
 	{
@@ -200,7 +200,7 @@ input[type = "hidden"]
 	}
 	#formtop
 	{
-		padding:none;
+		padding-left:0px;
 	}
 	#blurb
 	{
@@ -212,10 +212,10 @@ input[type = "hidden"]
 	input[type = "email"], input[type = "password"]{
 		width:100%;
 	}
-	#desktoponly{
+	.desktoponly{
 		display:none;
 	}
-	#desktopcontainer{
+	.desktopcontainer{
 		padding:10px;
 	}
 }

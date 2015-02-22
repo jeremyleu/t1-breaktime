@@ -15,11 +15,13 @@
 					<br>
 					{{#each users_arr}}
 						{{#if current}}
-							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div><div id = "fixed_timer">
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span class = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+							<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
+							<div id = "fixed_timer">
 							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></a></div></div>
 						{{/if}}
 					{{/each}}
-					<div class = "plaintext">Select a level below to view the activity corresponding to that level. <span style = "color:#AAAAAA">Gray</span> levels indicate that you have not unlocked them yet.</div><br><br>
+					<div class = "plaintext">Select a level below to view the activity corresponding to that level. <span style = "color:#AAAAAA">Gray</span> levels indicate that you have not unlocked them yet. You need <span class = "xpremaining" style = "display:inline">0</span> experience to progress to the next level. </div><br><br>
 					<span id ="errormsg"></span>
 					<center>
 						<div class="row levelsrow" id = "levelsrow-1">
@@ -94,7 +96,7 @@
 				var currentExperience = parseInt($('#xp').text(),10);
 				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
 				var xpNeeded = nextThreshold - currentExperience;
-				$("#xpremaining").text(xpNeeded);
+				$(".xpremaining").text(xpNeeded);
 				for(j = 0; j < activities_arr.activities.length; j++)
 				{
 					$('#xp-' + (j+1)).text(activities_arr.activities[j].experiencePoints + " XP");

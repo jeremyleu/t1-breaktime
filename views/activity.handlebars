@@ -63,14 +63,16 @@
 					<h2>Distance: 2.1 miles</h2>
 					<h2>Calories: 131.7 cal</h2>
 					<h2>Active Minutes: 48 min</h2> -->
-					You have taken <span id = "breaknumber"></span><br>
-					{{#each users_arr}}
-						{{#if current}}
-							{{#each breaks_arr}}
-							You took a level {{level}} break, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
-							{{/each}}
-						{{/if}}
-					{{/each}}
+					<div class = "plaintext">
+						You have taken <span id = "breaknumber"></span><br>
+						{{#each users_arr}}
+							{{#if current}}
+								{{#each breaks_arr}}
+								You took a level {{level}} break, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
+								{{/each}}
+							{{/if}}
+						{{/each}}
+					</div>
 				    
 			</div>
 			</div>

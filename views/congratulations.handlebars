@@ -15,8 +15,7 @@
 					<br>
 					{{#each users_arr}}
 						{{#if current}}
-							You are currently logged in as {{email}}.<br>
-							<span id = "level" style = "display:none">{{currentlevel}}</span>You have <span id = "xp" style = "display:inline">{{currentxp}}</span> experience points and need <span id = "xpremaining" style = "display:inline">0</span> experience points to progress to the next level.
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
 						{{/if}}
 					{{/each}}<br><br>
 					<div class = "jumbotron" style = "font-size:60px" align = "center">

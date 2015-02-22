@@ -153,6 +153,10 @@ ul li a, #timerbutton{
 	font-size:20px;
 }
 
+ul li {
+	height:30px;
+}
+
 input[type = "hidden"]
 {
 	display:none;
@@ -240,6 +244,10 @@ input[type = "hidden"]
 	#breakintervaldescription
 	{
 		font-size:12px;
+	}
+	h2
+	{
+		font-size:19px;
 	}
 }
 

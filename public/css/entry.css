@@ -60,7 +60,6 @@ h1{
 	width:750px;
 	text-align:center;
 	font-size:20px;
-	line-height:45px;
 }
 
 input, select{
@@ -179,6 +178,10 @@ input[type = "hidden"]
 {
 	font-size:16px;
 }
+.mobileonly
+{
+	display:none;
+}
 
 @media screen and (max-width: 750px) {
     #content{
@@ -248,6 +251,10 @@ input[type = "hidden"]
 	h2
 	{
 		font-size:19px;
+	}
+	.mobileonly
+	{
+		display:inline;
 	}
 }
 

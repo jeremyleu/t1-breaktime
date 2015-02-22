@@ -174,5 +174,18 @@ input[type = "hidden"]
 	{
 		width:90%;
 	}
+	body
+	{
+		background-size: 650px 500px;
+	}
+	#logo
+	{
+		width:90%;
+	}
+	#formtop
+	{
+		padding:none;
+	}
+	
 }
 

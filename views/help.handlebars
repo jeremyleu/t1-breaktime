@@ -13,15 +13,11 @@
 				<div align="left" style="margin-top:-106px;">
 					<h1>ABOUT</h1>
 					<br>
-					{{#each users_arr}}
-						{{#if current}}
-							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
-							<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
-							<div id = "fixed_timer">
-							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></a></div></div>
-						{{/if}}
-					{{/each}}
 
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
+							<div id = "fixed_timer">
+							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{user1.timerpref}}</span></a></div></div>
 
 					<div class = "plaintext">
 						BREAKTIME is the app designed to get you up and out of your chair on a regular basis throughout the day.  First, select the interval of time between breaks - this is the amount of time you would like to work for. The timer will count down until your break, then BREAKTIME will suggest an activity to get you moving, helping you stay happy and healthy at work.<br><br>If you do not want to complete the recommended activity, feel free to choose any of the other activities you have unlocked.  By completing any activity, you will earn experience points that unlock new levels.  If you absolutely do not want to complete any BREAKTIME activity, press 'skip break,' but remember that getting up and moving around is key to maintaining your health.<br><br>
@@ -32,13 +28,13 @@
 					<br><div id = "helpform"><form>
         
 				    	<label>Name</label><br>
-				    	<input name="contactName" type = "text" placeholder="Type Here" style = "width:60%" class = "form-control"><br>
+				    	<input name="contactName" type = "text" placeholder="Type Here" style = "width:100%" class = "form-control"><br>
 				            
 				    	<label>Email</label><br>
-				   		<input name="contactEmail" type="email" placeholder="Type Here" style = "width:60%" class = "form-control"><br>
+				   		<input name="contactEmail" type="email" placeholder="Type Here" style = "width:100%" class = "form-control"><br>
 				            
 				    	<label>Message</label><br>
-				    	<textarea name="message" placeholder="Type Here" style = "width:60%" rows = "10" class = "form-control"></textarea><br><br>
+				    	<textarea name="message" placeholder="Type Here" style = "width:100%" rows = "10" class = "form-control"></textarea><br><br>
 				            
 				    	<input id="submit-btn" name="submit" type="submit" value="Submit" class = "btn btn-default btn-xlarge">
 				        
@@ -65,9 +61,14 @@
 			window.onload = function() {
 				var currentExperience = parseInt($('#xp').text(),10);
 				var currentLevel = parseInt($('#level').text(),10);
-				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
-				var xpNeeded = nextThreshold - currentExperience;
-				$("#xpremaining").text(xpNeeded);
+				if(currentLevel < 17)
+				{
+					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+					var xpNeeded = nextThreshold - currentExperience;
+					$("#xpremaining").text(xpNeeded);
+				}
+				else
+					$("#xpremaining").text("MAX REACHED");
 			}
 			var timepref = $('#countdown_timer span').text();
 			var pathname = window.location.href;

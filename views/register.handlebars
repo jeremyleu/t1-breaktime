@@ -11,11 +11,11 @@
 			<img src = "../images/logo.png" id = "logo"><br><br>
 			<div class = "desktopcontainer">
 				<h2>REGISTER</h2>
-				<span id = "registererror"></span>
-				<form align = "left" method = "post" action = "/registerHandler">
+				<span id = "registererror">{{info}}</span>
+				<form align = "left" method = "post" action = "/register">
 					<div id = "formtop" class = "form-group">
 						<label for = "email">Email address: </label><br>
-						<input id = "email" name = "email" type = "email" class = "form-control" placeholder="Email"></input>
+						<input id = "email" name = "username" type = "email" class = "form-control" placeholder="Email"></input>
 						<label for = "password">Password: </label><br class = "desktoponly">
 						<input id = "password" name = "password" type = "password" class = "form-control" placeholder="Password"></input>
 						<label for = "verifypassword">Verify Password: </label><br class = "desktoponly">
@@ -37,63 +37,10 @@
 							<input type = "hidden" id = "timerinterval" name = "timerinterval" value = "00:20:00">
 						</div>
 						<br>
-						<!--<select>
-							<option value="interval">Choose Interval</option>
-							<option value="1">20 min</option>
-							<option value="2">30 min</option>
-							<option value="3">40 min</option>
-							<option value="4">50 min</option>
-							<option value="5">60 min</option>
-						</select>-->
+
 					</div>
 					<br>
-		<!--Work from 
-		<select>
-		<option value="Begin work hours">Hour</option>
-		<option value="1">1</option>
-		<option value="2">2 </option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-		<option value="10">10</option>
-		<option value="11">11</option>
-		<option value="12">12</option>
-		</select>
-		:
-		<input type="minutes" placeholder="Min" size = "3">
-		<select>
-		<option value="AM">AM</option>
-		<option value="PM">PM</option>
 
-		</select>
-		to 
-
-		<select>
-		<option value="End work hours">Hour</option>
-		<option value="1">1</option>
-		<option value="2">2 </option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-		<option value="10">10</option>
-		<option value="11">11</option>
-		<option value="12">12</option>
-		</select>
-		:
-		<input type="minutes" placeholder="Min" size = "3">
-		<select>
-		<option value="AM">AM</option>
-		<option value="PM">PM</option>
-
-		</select>-->
 					
 				<center>
 					<input id= "back-btn" class = "btn btn-default btn-xlarge" type = "button" value = "Back" onClick="history.go(-1);return true;">
@@ -126,27 +73,28 @@
 				$('#timerinterval').val("00:60:00");
 		});
 		$('#next-btn').click(function(e) {
+			if(!validateEmail($('#email').val()))
+			{
+				e.preventDefault();
+				$("#registererror").html("Registration failed. Please provide a valid email address.");
+			}
 			if($('#password').val() != $('#verifypassword').val())
 			{
 				e.preventDefault();
-				$("#registererror").text("Registration failed. Passwords do not match.");
+				$("#registererror").html("Registration failed. Passwords do not match.");
 			}
 			else if($('#password').val().length < 6)
 			{
 				e.preventDefault();
-				$("#registererror").text("Registration failed. Password must be at least 6 characters long.");
+				$("#registererror").html("Registration failed. Password must be at least 6 characters long.");
 			}
 		});
+		function validateEmail(email) { 
+		    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		    return re.test(email);
+		} 
 	</script>
 
-	<!--<script>
-      $(document).ready(function(){
-        var user,pass;
-        $("#next-btn").click(function(e){
-          	user=$("#email").val();
-          	pass=$("#password").val();
-          	$.post("/registerHandler",{email: user,password: pass});
-        });
-      });
-    </script>-->
+
+    <br><br>
 </body>

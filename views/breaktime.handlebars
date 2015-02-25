@@ -11,13 +11,8 @@
 
 			<div class="container" style="margin-top:394px" align = "left">
 				<h1>BREAKTIME!</h1><br>
-				{{#each users_arr}}
-					{{#if current}}
-						<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | XP: <span id = "xp">{{currentxp}}</span> | XP to next level: <span id = "xpremaining">0</span> | <a href ="logout">Logout</a></div>
-						<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
-						
-					{{/if}}
-				{{/each}}
+				<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
 				Why don't you try this level <span id = "leveldisplay"></span> activity?<br><br>
 				<div class = "jumbotron" id = "suggestion">
 					<span id = "description" class = "plaintext"></span><br><br>
@@ -59,6 +54,7 @@
 		<script type="text/javascript">
 
 			window.onload = function() {
+				var maxLevel = 17;
 
 				var pathname = window.location.href;
 				var currentLevel = parseInt($('#level').text(),10);
@@ -69,15 +65,22 @@
 				var indexOfLevel = pathname.indexOf('level=');
 				var currentExperience = parseInt($('#xp').text(),10);
 				
-				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
-				var xpNeeded = nextThreshold - currentExperience;
-				$("#xpremaining").text(xpNeeded);
+				if(currentLevel < maxLevel)
+				{
+					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+					var xpNeeded = nextThreshold - currentExperience;
+					$("#xpremaining").text(xpNeeded);
+				}
+				else
+					$("#xpremaining").text("MAX REACHED");
 				if(indexOfLevel == -1)
 					var level = Math.floor(Math.random() * currentLevel + 1);
 				else
 					var level = pathname.substring(indexOfLevel+6);
 				if(isNaN(level) || level > currentLevel || level < 1)
 					level = currentLevel;
+				if(level > maxLevel)
+					level = Math.floor(Math.random() * maxLevel + 1);
 				$("#leveldisplay").text(level);
 				$("#xp2").val(activities_arr.activities[level-1].experiencePoints);
 				$("#level2").val(level);

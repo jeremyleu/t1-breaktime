@@ -5,19 +5,24 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/entry.css" />
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+
     </head>
     <body>
         <center>
           <div id = "content" align = "center"> 
             <img src = "../images/logo.png" id = "logo"><br><br>
             <div class = "desktopcontainer">
-                 <center><div style = "line-height:28px;" id = "blurb">BREAKTIME is the app designed to get you up and out of your chair!<br></div></center>
+                 <center><div style = "line-height:28px;" id = "blurb">BREAKTIME is the app designed to get you up and out of your chair!<br><br></div></center>
+
+                {{#if user}}
+                    You are currently logged in as {{user.username}}.
+                {{/if}}
                 <h2>LOGIN</h2><br class = "mobileonly">
-                <span id = "loginerror"></span>
-                <form align = "left" method = "post" action = "/registerHandler" id ="login">
+                <span id = "loginerror">{{message}}</span>
+                <form align = "left" method = "post" action = "/login" id ="login">
                     <div id = "formtop" class = "form-group">
                         <label for = "emailfield">Email address: </label><br class = "desktoponly">
-                        <input id = "emailfield" name = "email" type = "email" class = "form-control" placeholder="Email"></input>
+                        <input id = "emailfield" name = "username" type = "email" class = "form-control" placeholder="Email"></input>
                         <label for = "passwordfield">Password: </label><br class = "desktoponly">
                         <input id = "passwordfield" name = "password" type = "password" class = "form-control" placeholder="Password"></input>
                         <input type = "hidden" id = "timerinterval" name = "timerinterval" value = "00:20:00">
@@ -37,28 +42,11 @@
         <script type = "text/javascript">
             $(document).ready(function(){
   
-                $('#submit_btn').click(function(e){
-                    var email = $('#emailfield').val();
-                    var password = $("#passwordfield").val();
-
-                    $.ajax('/fakeuser.json', {
-                        dataType: 'json',
-                        success: function(results){
-                            console.log(email, password);
-                            console.log(results.email, results.password);
-                            /*if(results.email != email || results.password != password){
-                                e.preventDefault();
-                                $("#loginerror").text("Login failed. Incorrect email or password.");
-                                return false;
-                            }
-                            else*/
-                                $("#login").submit();
-
-                        }
-                    });
-
-                    return false;
-                });
+                
+                function validateEmail(email) { 
+                    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(email);
+                } 
             });
         </script>
     </body>

@@ -10,17 +10,16 @@
 
    	   	function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
-        {{#each users_arr}}
-					{{#if current}}
+
+
           ['Days', 'Points'],
-          ["Day 1",{{currentxp}}],
+          ["Day 1",{{user1.currentxp}}],
           ["Day 2", 0],
           ["Day 3", 0],
           ["Day 4", 0],
           ["Day 5", 0]
         ]);
-        			{{/if}}
-					{{/each}}
+
         var options = {
           title: 'Daily Experience',
           width: 450,
@@ -48,16 +47,14 @@
 
 				<div align="left" style="margin-top:-106px;">
 					<h1>ACTIVITY</h1><br>
-					{{#each users_arr}}
-						{{#if current}}
-							You are level {{currentlevel}} and you have accumulated {{currentxp}} experience points.<br><br>
-							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
-							<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
+
+							You are level {{user1.currentlevel}} and you have accumulated {{user1.currentxp}} experience points.<br><br>
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
 							<div id = "fixed_timer">
-							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></a></div></div>
-							<span id = "breaknumberinvis" style = "display:none">{{breaks}}</span>
-						{{/if}}
-					{{/each}}
+							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{user1.timerpref}}</span></a></div></div>
+							<span id = "breaknumberinvis" style = "display:none">{{user1.breaks}}</span>
+
 					
 					<div id="top_x_div" style="width: 500px; height: 500px;"></div><br><br>
 					<!--<h2>Level: 1</h2>
@@ -68,13 +65,11 @@
 					<h2>Active Minutes: 48 min</h2> -->
 					<div class = "plaintext">
 						<h2>You have taken <span id = "breaknumber"></span></h2><br>
-						{{#each users_arr}}
-							{{#if current}}
-								{{#each breaks_arr}}
+
+								{{#each user1.breaks_arr}}
 								You took a level {{level}} break, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
 								{{/each}}
-							{{/if}}
-						{{/each}}
+
 					</div>
 				    
 			</div>
@@ -122,9 +117,14 @@
 				$('#breaknumber').text(breakText);
 				var currentExperience = parseInt($('#xp').text(),10);
 				var currentLevel = parseInt($('#level').text(),10);				
-				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
-				var xpNeeded = nextThreshold - currentExperience;
-				$("#xpremaining").text(xpNeeded);
+				if(currentLevel < 17)
+				{
+					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+					var xpNeeded = nextThreshold - currentExperience;
+					$("#xpremaining").text(xpNeeded);
+				}
+				else
+					$("#xpremaining").text("MAX REACHED");
 			}
 			var timepref = $('#countdown_timer span').text();
 			var pathname = window.location.href;

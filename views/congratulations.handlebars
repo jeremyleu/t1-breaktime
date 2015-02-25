@@ -13,14 +13,13 @@
 				<div align="left" style="margin-top:-106px;">
 					<h1>CONGRATULATIONS</h1>
 					<br>
-					{{#each users_arr}}
-						{{#if current}}
-							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
-							<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
-						{{/if}}
-					{{/each}}<br><br>
+
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
+						<br><br>
 					<div class = "jumbotron" style = "font-size:60px" align = "center">
 						You are now level <span id = "level2" style = "display:inline; font-size:200px;"></span>!
+						<div id = "maxLevelMsg"></div>
 					</div><br>
 					<center><input id = "next_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Start the countdown to my next break!"></input></center><br>
 			</div>
@@ -44,9 +43,17 @@
 				var currentExperience = parseInt($('#xp').text(),10);
 				var currentLevel = parseInt($('#level').text(),10);	
 				$('#level2').text(currentLevel);				
-				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
-				var xpNeeded = nextThreshold - currentExperience;
-				$("#xpremaining").text(xpNeeded);
+				if(currentLevel < 17)
+				{
+					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+					var xpNeeded = nextThreshold - currentExperience;
+					$("#xpremaining").text(xpNeeded);
+				}
+				else
+				{
+					$("#xpremaining").text("MAX REACHED");
+					$("#maxLevelMsg").text("You have reached the current maximum level of BREAKTIME. You are free to continue using BREAKTIME, but your level will no longer increase and you will no longer unlock new levels.");
+				}
 			}
 
 

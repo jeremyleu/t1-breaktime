@@ -13,21 +13,19 @@
 
 				<div align="left" style="margin-top:-106px;">
 					<h1>WELCOME</h1><br>
-					{{#each users_arr}}
+					<!--{{#each users_arr}}
 						{{#if current}}
 							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
 							<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
 						{{/if}}
-					{{/each}}
+					{{/each}}-->
+					<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
 				</div>	
 			<br>
 			<div id="countdown_timer" class = "jumbotron">
 				<span style = "font-size:200px;">
-					{{#each users_arr}}
-						{{#if current}}
-							{{timerpref}}
-						{{/if}}
-					{{/each}}
+					{{user1.timerpref}}
 				</span><br><h2>until your next break!</h2></div><br>
 			<input id = "now_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Breaktime now!"></input>
 			<input id = "playresume_btn" class = "btn btn-default btn-xlarge" type = "button" value = "Pause"></input>
@@ -54,9 +52,14 @@
 		window.onload = function() {
 			var currentExperience = parseInt($('#xp').text(),10);
 			var currentLevel = parseInt($('#level').text(),10);				
-			var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
-			var xpNeeded = nextThreshold - currentExperience;
-			$("#xpremaining").text(xpNeeded);
+			if(currentLevel < 17)
+				{
+					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+					var xpNeeded = nextThreshold - currentExperience;
+					$("#xpremaining").text(xpNeeded);
+				}
+				else
+					$("#xpremaining").text("MAX REACHED");
 
 
 			var timepref = $('#countdown_timer span').text();

@@ -13,15 +13,13 @@
 				<div align="left" style="margin-top:-106px;">
 					<h1>LEVELS</h1>
 					<br>
-					{{#each users_arr}}
-						{{#if current}}
-							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span class = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
-							<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
+
+							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
 							<div id = "fixed_timer">
-							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{timerpref}}</span></a></div></div>
-						{{/if}}
-					{{/each}}
-					<div class = "plaintext">Select a level below to view the activity corresponding to that level. <span style = "color:#AAAAAA">Gray</span> levels indicate that you have not unlocked them yet. You need <span class = "xpremaining" style = "display:inline">0</span> experience to progress to the next level. </div><br><br>
+							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{user1.timerpref}}</span></a></div></div>
+
+					<div class = "plaintext">Select a level below to view the activity corresponding to that level. <span style = "color:#AAAAAA">Gray</span> levels indicate that you have not unlocked them yet. <span id = "xpRemainingMsg">You need <span class = "xpremaining" style = "display:inline">0</span> experience to progress to the next level.</span></div><br><br>
 					<span id ="errormsg"></span>
 					<center>
 						<div class="row levelsrow" id = "levelsrow-1">
@@ -94,9 +92,17 @@
 				for(i = currentLevel + 1; i <= 16; i++)
 					document.getElementById("levelsbox-"+i).className += " disabled";
 				var currentExperience = parseInt($('#xp').text(),10);
-				var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
-				var xpNeeded = nextThreshold - currentExperience;
-				$(".xpremaining").text(xpNeeded);
+				if(currentLevel < 17)
+				{
+					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+					var xpNeeded = nextThreshold - currentExperience;
+					$("#xpremaining").text(xpNeeded);
+				}
+				else
+				{
+					$("#xpremaining").text("MAX REACHED");
+					$("#xpRemainingMsg").text("Congratulations! You've unlocked every level of BREAKTIME.");
+				}
 				for(j = 0; j < activities_arr.activities.length; j++)
 				{
 					$('#xp-' + (j+1)).text(activities_arr.activities[j].experiencePoints + " XP");

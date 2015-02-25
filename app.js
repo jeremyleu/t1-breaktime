@@ -47,7 +47,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.configure(function(){
 	app.use(express.cookieParser('keyboard cat'));
-    app.use(express.session({ cookie: { maxAge: 60000 }}));
+    app.use(express.session({ cookie: { maxAge: 365*24*60*60*1000 }}));
     app.use(flash());
 })
 app.use(function(req, res, next) {

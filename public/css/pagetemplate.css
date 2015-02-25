@@ -403,6 +403,7 @@ label {
 	}
 	#usernameshort {
 		max-width:450px;
+		overflow: hidden;
 		text-overflow:ellipsis;
 		-o-text-overflow:ellipsis;
 	}

@@ -49,8 +49,8 @@
 					<h1>ACTIVITY</h1><br>
 
 							You are level {{user1.currentlevel}} and you have accumulated {{user1.currentxp}} experience points.<br><br>
-							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
-					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
+							<div id = "usernametext">Welcome, <a href = "settings" class = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort"><span id = "usernameshort">Welcome, <a href = "settings" class = "usernamelink">{{user.username}}</a></span>  | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
 							<div id = "fixed_timer">
 							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{user1.timerpref}}</span></a></div></div>
 							<span id = "breaknumberinvis" style = "display:none">{{user1.breaks}}</span>
@@ -180,7 +180,7 @@
 				e.preventDefault();
 				window.location.href = "help?timeremaining=" + timer.getTimeRemaining();
 			});
-			$('#usernamelink').click(function(e) {
+			$('.usernamelink').click(function(e) {
 				e.preventDefault();
 				window.location.href = "settings?timeremaining=" + timer.getTimeRemaining();
 			});

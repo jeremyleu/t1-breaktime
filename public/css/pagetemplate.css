@@ -401,6 +401,11 @@ label {
 	#helpform input {
 		font-size:30px;
 	}
+	#usernameshort {
+		max-width:450px;
+		text-overflow:ellipsis;
+		-o-text-overflow:ellipsis;
+	}
 }
 @media all and (max-height: 615px){
 	#fixed_timer {

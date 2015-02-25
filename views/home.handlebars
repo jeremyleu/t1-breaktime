@@ -15,12 +15,12 @@
 					<h1>WELCOME</h1><br>
 					<!--{{#each users_arr}}
 						{{#if current}}
-							<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
-							<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
+							<div id = "usernametext">Welcome, <a href = "settings" class = "usernamelink">{{email}}</a> | Level: <span id = "level" style = "display:inline">{{currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+							<div id = "usernametextshort">Welcome, <a href = "settings" class = "usernamelink">{{email}}</a> | Level: <span id = "level">{{currentlevel}}</span> | <a href ="logout">Logout</a></div>
 						{{/if}}
 					{{/each}}-->
-					<div id = "usernametext">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
-					<div id = "usernametextshort">Welcome, <a href = "settings" id = "usernamelink">{{user.username}}</a> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametext">Welcome, <a href = "settings" class = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort"><span id = "usernameshort">Welcome, <a href = "settings" class = "usernamelink">{{user.username}}</a></span>  | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
 				</div>	
 			<br>
 			<div id="countdown_timer" class = "jumbotron">
@@ -142,7 +142,7 @@
 				e.preventDefault();
 				window.location.href = "help?timeremaining=" + timer.getTimeRemaining();
 			});
-			$('#usernamelink').click(function(e) {
+			$('.usernamelink').click(function(e) {
 				e.preventDefault();
 				window.location.href = "settings?timeremaining=" + timer.getTimeRemaining();
 			});

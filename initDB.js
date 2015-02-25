@@ -53,7 +53,7 @@ function onceClear(err) {
       if(to_save_count <= 0) {
         console.log('DONE');
         // The script won't terminate until the 
-        // connection to the database is closed
+        mongoose.connection.close();// connection to the database is closed
       }
     });
   }

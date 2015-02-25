@@ -4,44 +4,53 @@ var thresholds = require("../thresholds.json");
 
 
 exports.completeActivity = function(req, res){
-	var query = {email : res.locals.user.username};
+	if(!res.locals.user)
+	{
+		var message = "You must be logged in to do that!";
+      	res.render('index', { message: message });
+	}
+	else
+	{
+		var query = {email : res.locals.user.username};
 
-	models.User
-        .findOne(query)
-        .exec(afterQuery);
-    function afterQuery(err, users1) {
-    	if(err) console.log(err);
-    	users1.breaks++;
-    	users1.currentxp += parseInt(req.body.experienceGained, 10);
-    	var finishedBreak = 
-    	{
-    		"level": req.body.levelDone,
-			"enjoyedBreak": req.body.satisfaction === "true",
-			"productive": req.body.productivity === "true"
-    	}
-    	users1.breaks_arr.push(finishedBreak);
-    	
+		models.User
+	        .findOne(query)
+	        .exec(afterQuery);
+	    function afterQuery(err, users1) {
+	    	if(err) console.log(err);
+	    	users1.breaks++;
+	    	users1.currentxp += parseInt(req.body.experienceGained, 10);
+	    	var finishedBreak = 
+	    	{
+	    		"level": req.body.levelDone,
+				"enjoyedBreak": req.body.satisfaction === "true",
+				"productive": req.body.productivity === "true"
+	    	}
+	    	users1.breaks_arr.push(finishedBreak);
+	    	
 
-        console.log(users1);
-		if(thresholds["thresholds_arr"].length < users1.currentlevel && thresholds["thresholds_arr"][users1.currentlevel].threshold <= users1.currentxp)
-		{
-			users1.currentlevel++;
-			users1.save();
-			console.log("user updated: " + users1.email);
-			res.render('congratulations', {user1: users1}), function(err, html) {
-			    res.send();
+	        console.log(users1);
+	        console.log(thresholds["thresholds_arr"][users1.currentlevel].threshold);
+			if(thresholds["thresholds_arr"].length > users1.currentlevel && thresholds["thresholds_arr"][users1.currentlevel].threshold <= users1.currentxp)
+			{
+				users1.currentlevel++;
+				users1.save();
+				console.log("user leveled up: " + users1.email);
+				res.render('congratulations', {user1: users1}), function(err, html) {
+				    res.send();
+				}
 			}
-		}
-		else
-		{	
-			users1.save();
-			console.log("user updated: " + users1.email);
-			res.render('home', {user1: users1}), function(err, html) {
-			    res.send();
+			else
+			{	
+				users1.save();
+				console.log("user did not level up: " + users1.email);
+				res.render('home', {user1: users1}), function(err, html) {
+				    res.send();
+				}
 			}
-		}
 		
 		
+		}
 	}
 };
 	/*for(i = 0; i < users["users_arr"].length; i++)

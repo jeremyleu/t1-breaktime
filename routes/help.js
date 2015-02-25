@@ -2,12 +2,20 @@ var users = require("../users.json");
 var models = require('../models.js');
 
 exports.view = function(req, res){
-  	models.User
-        .find({ email : res.locals.user.username})
-        .exec(afterQuery);
-    function afterQuery(err, users1) {
-   		if(err) console.log(err);
-    	console.log("users: " + users1[0].email);
-        res.render('help', {user1: users1[0]});
-    }
+	if(!res.locals.user)
+	{
+		var message = "You must be logged in to access that page.";
+      	res.render('index', { message: message });
+	}
+	else
+	{
+	  	models.User
+	        .findOne({ email : res.locals.user.username})
+	        .exec(afterQuery);
+	    function afterQuery(err, users1) {
+	   		if(err) console.log(err);
+	    	console.log("users: " + users1.email);
+	        res.render('help', {user1: users1});
+	    }
+	}
 };

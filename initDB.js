@@ -13,6 +13,7 @@
 
 var mongoose = require('mongoose');
 var models   = require('./models');
+var account   = require('./models/account');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
@@ -53,9 +54,17 @@ function onceClear(err) {
         console.log('DONE');
         // The script won't terminate until the 
         // connection to the database is closed
-        mongoose.connection.close()
       }
     });
   }
+}
+
+account
+  .find()
+  .remove()
+  .exec(accountsCleared);
+function accountsCleared(err) {
+  if(err) console.log(err);
+  mongoose.connection.close();
 }
 

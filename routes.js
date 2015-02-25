@@ -3,6 +3,20 @@ var Account = require('./models/account');
 var users = require("./users.json");
 var models = require('./models');
 
+var index = require('./routes/index');
+var home = require('./routes/home');
+var activity = require('./routes/activity');
+var breaktime = require('./routes/breaktime');
+var help = require('./routes/help');
+var levels = require('./routes/levels');
+//var register = require('./routes/register');
+var settings = require('./routes/settings');
+var editSettings = require('./routes/editSettings');
+var activityComplete = require('./routes/activityComplete');
+var registerHandler = require('./routes/registerHandler');
+//var logout = require('./routes/logout');
+var congratulations = require('./routes/congratulations');
+
 module.exports = function (app) {
 
   app.get('/', function (req, res) {
@@ -84,6 +98,17 @@ module.exports = function (app) {
     req.flash('info', 'Flash is back!')
     res.redirect('/');
   });
-   
+  app.get('/home', home.view);
+  app.get('/activity', activity.view);
+  app.get('/breaktime', breaktime.view);
+  app.get('/help', help.view);
+  app.get('/levels', levels.view);
+  //app.get('/register', register.view);
+  app.get('/settings', settings.view);
+  app.post('/editSettings', editSettings.editPreferences);
+  app.post('/activityComplete', activityComplete.completeActivity);
+  app.post('/registerHandler', registerHandler.addUser);
+  //app.get('/logout', logout.logout);
+  app.get('/congratulations', congratulations.view);
 
 };

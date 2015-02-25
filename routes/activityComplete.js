@@ -30,7 +30,6 @@ exports.completeActivity = function(req, res){
 	    	
 
 	        console.log(users1);
-	        console.log(thresholds["thresholds_arr"][users1.currentlevel].threshold);
 			if(thresholds["thresholds_arr"].length > users1.currentlevel && thresholds["thresholds_arr"][users1.currentlevel].threshold <= users1.currentxp)
 			{
 				users1.currentlevel++;

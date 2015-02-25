@@ -43,7 +43,7 @@
 				var currentExperience = parseInt($('#xp').text(),10);
 				var currentLevel = parseInt($('#level').text(),10);	
 				$('#level2').text(currentLevel);				
-				if(currentLevel < 17)
+				if(currentLevel <= 17)
 				{
 					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
 					var xpNeeded = nextThreshold - currentExperience;

@@ -15,7 +15,7 @@ exports.view = function(req, res){
 	    function afterQuery(err, users1) {
 	   		if(err) console.log(err);
 	    	console.log("users: " + users1.email);
-	        res.render('levels', {user1: users1});
+	        res.render('levels-locks', {user1: users1});
 	    }
 	}
 };

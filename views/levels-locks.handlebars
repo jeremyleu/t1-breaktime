@@ -1,0 +1,179 @@
+<html>
+	<head>
+		<title>BREAKTIME - Levels</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/pagetemplatealt.css" />
+	</head>
+	<body>
+
+		
+		<center>
+			<div class="container" style="margin-top:500px">
+
+				<div align="left" style="margin-top:-106px;">
+					<h1>LEVELS</h1>
+					<br>
+
+							<div id = "usernametext">Welcome, <a href = "settings" class = "usernamelink">{{user.username}}</a> | Level: <span id = "level" style = "display:inline">{{user1.currentlevel}}</span> | XP: <span id = "xp" style = "display:inline">{{user1.currentxp}}</span> | XP to next level: <span id = "xpremaining" style = "display:inline">0</span> | <a href ="logout">Logout</a></div>
+					<div id = "usernametextshort"><span id = "usernameshort">Welcome, <a href = "settings" class = "usernamelink">{{user.username}}</a></span> | Level: <span id = "level">{{user1.currentlevel}}</span> | <a href ="logout">Logout</a></div>
+							<div id = "fixed_timer">
+							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{user1.timerpref}}</span></a></div></div>
+
+					<div class = "plaintext">Select a level below to view the activity corresponding to that level. <span style = "color:#AAAAAA">Gray</span> levels indicate that you have not unlocked them yet. <span id = "xpRemainingMsg">You need <span class = "xpremaining" style = "display:inline">0</span> experience to progress to the next level.</span></div><br><br>
+					<span id ="errormsg"></span>
+					<center>
+						<div class="row levelsrow" id = "levelsrow-1">
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-1"><div class = "jumbotron">1<div class = "activityxp" id = "xp-1"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-2"><div class = "jumbotron">2<div class = "activityxp" id = "xp-2"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-3"><div class = "jumbotron">3<div class = "activityxp" id = "xp-3"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-4"><div class = "jumbotron">4<div class = "activityxp" id = "xp-4"></div></div></div>
+						</div>
+						<div class="row levelsrow" id = "levelsrow-2">
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-5"><div class = "jumbotron">5<div class = "activityxp" id = "xp-5"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-6"><div class = "jumbotron">6<div class = "activityxp" id = "xp-6"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-7"><div class = "jumbotron">7<div class = "activityxp" id = "xp-7"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-8"><div class = "jumbotron">8<div class = "activityxp" id = "xp-8"></div></div></div>
+						</div>
+						<div class="row levelsrow" id = "levelsrow-3">
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-9"><div class = "jumbotron">9<div class = "activityxp" id = "xp-9"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-10"><div class = "jumbotron">10<div class = "activityxp" id = "xp-10"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-11"><div class = "jumbotron">11<div class = "activityxp" id = "xp-11"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-12"><div class = "jumbotron">12<div class = "activityxp" id = "xp-12"></div></div></div>
+						</div>
+						<div class="row levelsrow" id = "levelsrow-4">
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-13"><div class = "jumbotron">13<div class = "activityxp" id = "xp-13"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-14"><div class = "jumbotron">14<div class = "activityxp" id = "xp-14"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-15"><div class = "jumbotron">15<div class = "activityxp" id = "xp-15"></div></div></div>
+						  	<div class="col-md-3 levelscolumn" id ="levelsbox-16"><div class = "jumbotron">16<div class = "activityxp" id = "xp-16"></div></div></div>
+						</div>
+					</center>
+					
+			</div>
+			</div>
+			<div id = "bottomspace"></div>
+		</center>
+		<nav class="nav-bar navbar navbar-fixed-bottom">
+ 		<center>
+ 			<div><a href="home"><img src = "navicons/home.png" class = "navicon" id = "homelink"></a></div>
+	 		<div><a href="levels"><img src = "navicons/levels.png" class = "navicon" id = "levelslink"></a></div>
+	 		<div><a href="activity"><img src = "navicons/activity.png" class = "navicon" id = "activitylink"></a></div>
+	 		<div><a href="settings"><img src = "navicons/settings.png" class = "navicon" id = "settingslink"></a></div>
+	 		<div><a href="help"><img src = "navicons/help.png" class = "navicon" id = "helplink"></a></div>
+	 		<span class = "stretch"></span>
+ 		</center>
+		</nav>
+
+		
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="js/countdown.js" type="text/javascript"></script>
+		<script src="levelThresholds.json"></script>
+		<script src="suggestions.json"></script>
+		<script type="text/javascript">
+			$('.levelscolumn').click(function(){
+				if(!$(this).hasClass("disabled"))
+				{
+					var levelstr = $(this).prop("id");
+					var level = levelstr.substring(10);
+					window.location.href = "breaktime?level=" + level;
+				}
+				else
+				{
+					$('#errormsg').html("<center>You have not unlocked that level yet!<br><br></center>");
+				}
+		   	});
+		</script>
+
+		<script type="text/javascript">
+
+			window.onload = function() {
+				var cw = $('#levelsrow div').width();
+				$('#levelsrow div').css({'height':cw+'px'});
+				var currentLevel = parseInt($('#level').text(),10);
+				for(i = currentLevel + 1; i <= 16; i++)
+					document.getElementById("levelsbox-"+i).className += " disabled";
+				var currentExperience = parseInt($('#xp').text(),10);
+				if(currentLevel < 17)
+				{
+					var nextThreshold = thresholds_arr.thresholds[currentLevel].threshold;
+					var xpNeeded = nextThreshold - currentExperience;
+					$("#xpremaining").text(xpNeeded);
+					$(".xpremaining").text(xpNeeded);
+				}
+				else
+				{
+					$("#xpremaining").text("MAX REACHED");
+					$("#xpRemainingMsg").text("Congratulations! You've unlocked every level of BREAKTIME.");
+				}
+				for(j = 0; j < activities_arr.activities.length; j++)
+				{
+					$('#xp-' + (j+1)).text(activities_arr.activities[j].experiencePoints + " XP");
+
+				}
+			}
+		</script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script type = "text/javascript">
+			var timepref = $('#countdown_timer span').text();
+			var pathname = window.location.href;
+			var indexOfTimeRemaining = pathname.indexOf('timeremaining=');
+			if(indexOfTimeRemaining == -1)
+				timer = new Countdown(timepref);
+			else
+			{
+				var timeRemaining = pathname.substring(indexOfTimeRemaining+14);
+				try{
+					if(timeToSeconds(timeRemaining) > timeToSeconds(timepref))
+						timer = new Countdown(timepref);
+					else
+						timer = new Countdown(timeRemaining);
+				} catch(e){
+					timer = new Countdown(timepref);
+				}
+				
+			}
+			timer.init();
+			timer.start();
+
+			function timeToSeconds(time)
+			{
+			    if(time == undefined) time = this.start_time;
+			    time_ary = time.split(":"); 
+			    var tempHours = parseInt(time_ary[0]);
+			    var tempMinutes = parseInt(time_ary[1]);
+			    var tempSeconds = parseInt(time_ary[2]);
+			    if(isNaN(tempHours)||isNaN(tempMinutes)||isNaN(tempSeconds))
+			    	throw new TimeFormatException(time);
+			    else
+			    	return tempHours * 3600 + tempMinutes * 60 + tempSeconds;
+			}
+			$('#homelink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "home?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('#levelslink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "levels?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('#activitylink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "activity?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('#settingslink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "settings?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('#helplink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "help?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('.usernamelink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "settings?timeremaining=" + timer.getTimeRemaining();
+			});
+			$('#timerlink').click(function(e) {
+				e.preventDefault();
+				window.location.href = "home?timeremaining=" + timer.getTimeRemaining();
+			});
+		</script>
+	</body>
+</html>

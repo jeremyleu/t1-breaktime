@@ -1,0 +1,428 @@
+@font-face {
+	font-family: 'DINRegular';
+	src: url('../fonts/din-regular-webfont.eot');
+    src: url('../fonts/din-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/din-regular-webfont.woff') format('woff'),
+         url('../fonts/din-regular-webfont.ttf') format('truetype'),
+         url('../fonts/din-regular-webfont.svg#dinregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DINBold';
+    src: url('../fonts/din_bold-webfont.eot');
+    src: url('../fonts/din_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/din_bold-webfont.woff') format('woff'),
+         url('../fonts/din_bold-webfont.ttf') format('truetype'),
+         url('../fonts/din_bold-webfont.svg#dinbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: GeosansLight;
+	src: url("../fonts/GeosansLight.eot") /* EOT file for IE */
+}
+@font-face {
+	font-family: GeosansLight;
+	src: url("../fonts/GeosansLight.ttf") /* TTF file for CSS3 browsers */
+}
+body{
+	font: 20px "DINRegular", georgia;
+	line-height:1.7;
+	letter-spacing:0px;
+	color: #3f3f3f;
+	background:url('../images/background.png') no-repeat 0px 0px;
+}
+h1{
+	font: "DINBold";
+	font-weight:regular;
+}
+
+.btn-xlarge {
+	padding:18px 28px;
+	font-size:22px;
+	border-radius: 8px;
+}
+
+.nav-bar {
+ 	position: fixed;
+  	bottom: 0 !important;
+  	left: 0;
+  	border-top: 35px #000000 solid;
+  	z-index: 9999;
+  	width: 100%;
+  	height: 13%;
+  	min-height:80px;
+  	background-color: #b2ebfc;
+  	text-align:justify;
+  	font-size:0.1px !important;
+  	min-width:500px;
+  	text-align:justify;
+  	-ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+.navicon {
+	height: 80%;
+	padding-top: 0.5%;
+}
+.nav-bar div {
+	display:inline-block;
+	zoom:1;
+	width:18%;
+}
+.stretch{
+	width:100%;
+	display:inline-block;
+	font-size:0;
+	line-height:0;
+}
+.nav-bar:after{
+	content: '';
+	width: 100%;
+	display:inline-block;
+}
+.navspace{
+	width:8%;
+}
+#bottomspace{
+	height:20%;
+}
+
+.numberdiv{
+	font: 36px GeosansLight !important;
+	position:absolute;
+	top:-2px !important;
+	left:5px !important;
+	width:20px;
+}
+.whatever{
+	height:26px;
+	position:absolute;
+	top:-2px !important;
+	left:28px !important;
+	width:120px !important;
+	background:none !important;
+}
+table, tr, td{
+	font: 11px "DINRegular", georgia;
+	color: #000000 !important;
+	text-decoration:none !important;
+}
+#main{
+
+	margin-top:500px;
+	width:750px;
+
+}
+#lightningbolt
+{
+	opacity:1;
+	border: 0px !important;
+	position:absolute;
+	top:-5px;
+	left:-20px;
+	-webkit-transition: left 0.5s ease-in-out;
+    -moz-transition: left 0.5s ease-in-out;
+    -o-transition: left 0.5s ease-in-out;
+}
+#lightningbolt:hover
+{
+	left: 0px;
+}
+#next{
+	float:right;
+}
+#previous{
+	float:left;
+}
+#next a, #next a:link, #next a:active, #next a:visited, #next a:hover, #previous a, #previous a:link, #previous a:active, #previous a:visited, #previous a:hover, a, a:link, a:active, a:visited{
+	text-decoration:none;
+	color:#000000;
+}
+#next a, #next a:link, #next a:active, #next a:visited, #previous a, #previous a:link, #previous a:active, #previous a:visited, .pinched a, .pinched a:link, .pinched a:active, .pinched a:visited {
+	opacity:0.5;
+	-webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+}
+#next a:hover, #previous a:hover, .pinched a:hover{
+	opacity:1;
+}
+.pinched a:link, .pinched a:active, .pinched a:visited, .pinched a, .pinched a:hover{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+td{
+	width:50%;
+}
+.tablehead{
+	margin-left: -7px;	
+}
+.titleimg, #titleimgbottom{
+	opacity:1 !important;
+	border-style: none !important;
+}
+
+.titleimgbottom{
+	border-style: none !important;
+}
+#titleimgcontainertop{
+	position:relative;
+	top:0px;
+	left:0px;
+	width:100%;
+}
+#titleimgcontainerbottom{
+	position:relative;
+	width:100%;
+	top:-107px;
+	left:0px;
+}
+
+.pinched {
+	position:relative;
+	padding:15px;
+	margin:50px 0 3em;
+	text-align:center;
+	color:#fff;
+	background:#333; 
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	font-family: cambria !important;
+	font-size: 18px !important;
+	letter-spacing: 0px !important;
+}
+
+
+
+/* creates a rectangle of the colour wanted for the pointy bit */
+
+.pinched:before {
+	content:"";
+	position:absolute;
+	top:-20px;
+	left:50%;
+	width:100px;
+	height:20px;
+	margin:0 0 0 -50px;
+	background:#333;
+}
+
+
+
+/* creates a rounded rectangle to cover part of the rectangle generated above */
+
+.pinched:after {
+	content:"";
+	position:absolute;
+	top:-20px;
+	left:0;
+	width:50%;
+	height:20px;
+	background:#fff;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+}
+
+
+
+/* creates the other rounded rectangle */
+
+.pinched > :first-child:before {
+	content:""; 
+	position:absolute; 
+	top:-20px; 
+	right:0; 
+	width:50%; 
+	height:20px; 
+	background:#fff;
+	-webkit-border-bottom-left-radius:15px;
+	-moz-border-radius-bottomleft:15px;
+	border-bottom-left-radius:15px;
+}
+.quoteend{
+	font-size: 14px;
+	font-style: italic;
+}
+.hangingindent{
+	text-indent:-25px;
+	padding-left:25px;
+}
+
+.levelsrow{
+	font-size:130px;
+	width:100%;
+	line-height:1.3;
+}
+
+.levelscolumn div{
+	background-color:#d4f4fd;
+	color: #3f3f3f;
+}
+
+
+
+.btn-satisfaction, .btn-productivity, .btn-return {
+	display:none;
+}
+
+#timeleft{
+	display:inline;
+}
+
+label {
+	font-weight: normal;
+	line-height: 24px;
+}
+
+.disabled div {
+	color:#AAAAAA;
+}
+
+.disabled .jumbotron{
+	background-image:url('../images/lock5.png');
+	background-color: #eeeeee;
+	background-size:100%;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.disabled .activityxp{
+	background-color:transparent;
+}
+
+.activityxp {
+	font-size:18px;
+}
+
+#usernametext {
+	position:absolute;
+	right:10px;
+	top:290px;
+	color:#FFFFFF;
+	display:inline;
+}
+
+#usernametext a, #usernametextshort a {
+	color:#fffca1;
+}
+#fixed_timer {
+	position:fixed;
+	font-size:40px;
+	right:30px;
+	bottom:12%;
+	z-index:10000;
+	background-color:#000000;
+	padding-left:10px;
+	padding-right:10px;
+	color:#FFFFFF;
+	border-radius:10px;
+}
+#timerlink {
+	color:#fffca1;
+}
+#description {
+	font-size:28px;
+}
+
+#usernametextshort {
+	position:absolute;
+	right:10px;
+	top:295px;
+	color:#FFFFFF;
+	display:none;
+}
+
+#timerintervalmenu, #timerbutton {
+	font-size:22px;
+}
+
+#timerintervallabel {
+	font-size:24px;
+	margin-bottom:20px;
+}
+
+#timerintervalmenu li {
+	height:48px;
+}
+
+#maxLevelMsg {
+	font-size: 24px;
+}
+
+@media only screen and (max-device-width: 480px)
+{
+	body{
+		font: 30px "DINRegular", georgia;
+		background:url('../images/background-mobile.png') no-repeat 0px 0px;
+	}
+	#description{
+		font-size:36px;
+	}
+	#usernametext {
+		font-size: 20px;
+	}
+	h1{
+		font-size:42px;
+	}
+	h2{
+		font-size:36px;
+	}
+	#fixed_timer {
+		font-size:48px;
+	}
+	.btn-xlarge {
+		padding:27px 42px;
+		font-size:33px;
+		border-radius: 12px;
+		margin-bottom:20px;
+		max-width:100%;
+	}
+	.plaintext {
+		line-height:1.7;
+	}
+	.activityxp {
+		font-size:24px;
+	}
+	#usernametextshort {
+		display:inline;
+		font-size:30px;
+	}
+	#usernametext{
+		display:none;
+	}
+	#timerintervalmenu, #timerbutton {
+		font-size:33px;
+	}
+	#timerintervallabel {
+		font-size:36px;
+	}
+	#timerintervalmenu li {
+		height:66px;
+	}
+
+	#maxLevelMsg {
+		font-size: 36px;
+	}
+	#helpform input {
+		font-size:30px;
+	}
+	#usernameshort {
+		max-width:450px;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		-o-text-overflow:ellipsis;
+	}
+}
+@media all and (max-height: 615px){
+	#fixed_timer {
+		bottom:60px;
+	}
+}

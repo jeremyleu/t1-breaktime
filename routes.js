@@ -9,6 +9,7 @@ var activity = require('./routes/activity');
 var breaktime = require('./routes/breaktime');
 var help = require('./routes/help');
 var levels = require('./routes/levels');
+var levelsalt = require('./routes/levelsalt');
 //var register = require('./routes/register');
 var settings = require('./routes/settings');
 var editSettings = require('./routes/editSettings');
@@ -103,6 +104,7 @@ module.exports = function (app) {
   app.get('/breaktime', breaktime.view);
   app.get('/help', help.view);
   app.get('/levels', levels.view);
+  app.get('/levelsalt', levelsalt.view);
   //app.get('/register', register.view);
   app.get('/settings', settings.view);
   app.post('/editSettings', editSettings.editPreferences);

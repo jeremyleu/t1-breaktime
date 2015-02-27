@@ -411,9 +411,7 @@ label {
 	#maxLevelMsg {
 		font-size: 36px;
 	}
-	#helpform input {
-		font-size:30px;
-	}
+
 	#usernameshort {
 		max-width:450px;
 		overflow: hidden;

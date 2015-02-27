@@ -2,20 +2,42 @@
 	"users_arr": [
 		{
 			"email": "j3leu@ucsd.edu",
-			"password": "password",
 			"timerpref": "00:30:00",
 			"timeremaining": "00:30:00",
 			"currentlevel": 1,
 			"currentxp": 0,
+			"breaks": 0,
+			"breaks_arr":
+			[
+
+					{"level": 1, 
+					"enjoyedBreak": false, 
+					"productive": false},
+					{"level": 2, 
+					"enjoyedBreak": false, 
+					"productive": false}
+
+			],
 			"current": false
 		},
 		{
 			"email": "idr@ucsd.edu",
-			"password": "password",
 			"timerpref": "00:30:00",
 			"timeremaining": "00:30:00",
 			"currentlevel": 1,
 			"currentxp": 0,
+			"breaks": 0,
+			"breaks_arr":
+			[
+
+					{"level": 1,
+					"enjoyedBreak": false, 
+					"productive": false},
+					{"level": 2, 
+					"enjoyedBreak": false, 
+					"productive": false}
+
+			],			
 			"current": false
 		}
 	]

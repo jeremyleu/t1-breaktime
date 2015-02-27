@@ -2,6 +2,7 @@ var activities_arr = {
 	"activities": [
 		{
 			"level": "1",
+			"log": "got a drink of water"
 			"description": "Get up and get a drink of water!",
 			"experiencePoints": "200",
 			"buttonColor": "#8080FF", 
@@ -10,6 +11,7 @@ var activities_arr = {
 		{
 			"level": "2",
 			"description": "WRIST STRETCH: Get up and do a quick 2 minute stretch. Bend your hands all the way back, then all the way forward. Stretch your fingers wide. Finally, shake out your hands. This should help reduce the risk of carpel tunnel sydrome.",
+			"log": "did a wrist stretch",
 			"experiencePoints": "400",
 			"buttonColor": "#DOF37B",
 			"imageURL": "no idea"			
@@ -17,6 +19,7 @@ var activities_arr = {
 		{
 			"level": "3",
 			"description": "Get up and quickly talk to someone nearby, be it about work or anything else. If in doubt, just ask them how they are doing.",
+			"log": "talked to a coworker",
 			"experiencePoints": "400",
 			"buttonColor": "#C199D6",
 			"imageURL": "face"			
@@ -24,6 +27,7 @@ var activities_arr = {
 		{
 			"level": "4",
 			"description": "HAND EXERCISE: Get up and do a quick 2 minute exercise. Hold a soft ball or towel in your palm and squeeze it. If you don't have an item to squeeze, just make a fist.  Hold for a few seconds and release. Repeat 3 times on each hand. Be sure to breath while doing this, exhale on the squeeze, inhale after release.",
+			"log": "did a hand exercise",
 			"experiencePoints": "500",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -31,6 +35,7 @@ var activities_arr = {
 		{
 			"level": "5",
 			"description": "Get up from your desk and look out the nearest window for a minute. Stretch your eyes, see whats going on outside.",
+			"log": "stretched your eyes",
 			"experiencePoints": "500",
 			"buttonColor": "#CCE5E5",
 			"imageURL": "eye"			
@@ -38,6 +43,7 @@ var activities_arr = {
 		{
 			"level": "6",
 			"description": "ANKLE STRETCH: Get up and do a quick 2 minute stretch. Stand with one foot held slighty off the ground in front of you.  Draw a circle with the toe of that foot, rolling your ankle in a counterclockwise 3 times, then in a clockwise 3 times. Repeat with your other foot.  Take a deep breath.",
+			"log": "did an ankle stretch",
 			"experiencePoints": "600",
 			"buttonColor": "#DOF37B",
 			"imageURL": "no idea"			
@@ -45,6 +51,7 @@ var activities_arr = {
 		{
 			"level": "7",
 			"description": "CALF RAISES: Get up and do a quick 2 minute exercise. Stand and raise up on your toes. Hold for a few seconds then lower. Repeat 10 times. To increase the difficulty, use only one leg at a time.",
+			"log": "did calf raises",
 			"experiencePoints": "500",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -52,6 +59,7 @@ var activities_arr = {
 		{
 			"level": "8",
 			"description": "Go find a staircase and climb it! (Counts as cardio and a leg exercise)",
+			"log": "climbed the staircase",
 			"experiencePoints": "650",
 			"buttonColor": "#999999",
 			"imageURL": "sfdkhl"			
@@ -59,6 +67,7 @@ var activities_arr = {
 		{
 			"level": "9",
 			"description": "Get up and visualize yourself doing your favorite active hobby. If you can, mimic some of the usual motions, a golf swing, some swimming strokes, think about how your body moves, what muscles you use, and how you feel.",
+			"log": "practiced your hobby",
 			"experiencePoints": "650",
 			"buttonColor": "#CCE5E5",
 			"imageURL": "tree"			
@@ -66,6 +75,7 @@ var activities_arr = {
 		{
 			"level": "10",
 			"description": "ARM AND SHOULDER STRETCH: Get up and do a quick 2 minute stretch. Extend one arm out straight in front of you. With the other hand, grab the elbow of the outstretched arm and pull it across your chest, stretching your shoulder and upper back muscles. Exhale fully.Hold. Release and take a deep breath. Stretch out the other arm in front of you and repeat.",
+			"log": "did an arm stretch",
 			"experiencePoints": "650",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -73,7 +83,7 @@ var activities_arr = {
 		{
 			"level": "11",
 			"description": "ARM RAISES: Get up and do a quick 2 minute exercise. Stand with your shoulders back and back straight.  Lower your hands to your sides. With your arms straight, raise your arms to shoulder height in front of you. Lower your arms to your waist. Then, raise your arms out to your sides to shoulder height.  Return to starting position, then repeat the two motions ten times.",
-			"description": "Get up and do a quick 2 minute arm exercise.",
+			"log": "did arm raises",
 			"experiencePoints": "700",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -81,6 +91,7 @@ var activities_arr = {
 		{
 			"level": "12",
 			"description": "Go outside and get a breath of fresh air. Put your work aside for five minutes and see what it is like outside.",
+			"log": "got a breath of fresh air",
 			"experiencePoints": "800",
 			"buttonColor": "#CCE5E5",
 			"imageURL": "tree"						
@@ -88,6 +99,7 @@ var activities_arr = {
 		{
 			"level": "13",
 			"description": "BACK STRETCH: Get up and do a quick 2 minute stretch. Stretch your back with a 'big hug' - Hug your body, placing the right hand on your left shoulder and the left hand on your right shoulder. Breathe in and out, releasing the area between your shoulder blades. Switch which arm is on top, repeat.",
+			"log": "did a back stretch",
 			"experiencePoints": "700",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -95,13 +107,15 @@ var activities_arr = {
 		{
 			"level": "14",
 			"description": "SHOULDER SHRUGS: Get up and do a quick 2 minute exercise.  Stand with your legs shoulder width apart, back strait. Then, simply raise both shoulders up toward the ears while exhaling, hold for 5 seconds, then relax and take a deep inhale. Repeat 10 times. Be sure to breath to help release the stress in your upper back, shoulders and neck.",
+			"log": "did shoulder shrugs",
 			"experiencePoints": "800",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
 		},
 		{
 			"level": "15",
-			"description": "Go outside and get a breath of fresh air. Put your work aside for five minutes and see what it is like outside.",
+			"description": "Go for a quick walk outside.  If you can spare five minutes, leave the building and go for a brisk walk.",
+			"log": "went for a walk",
 			"experiencePoints": "850",
 			"buttonColor": "#CCE5E5",
 			"imageURL": "tree"						
@@ -109,6 +123,7 @@ var activities_arr = {
 		{
 			"level": "16",
 			"description": "HALF SQUATS: Get up and do a quick 2 minute exercise. Stand with your feet shoulder distance apart. Your hands can rest on the front of your thighs or reach in front of you. Keep your chest lifted and slowely lower your hips about 10 inches, as if you are sitting down into a chair. Push through your heels and bring your body back up to standing. Inhale before squat and exhale while pushing to standing position.  Keep your abs tight, do not bend forward at your waist.",
+			"log": "did squats",
 			"experiencePoints": "900",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			
@@ -116,6 +131,7 @@ var activities_arr = {
 		{
 			"level": "17",
 			"description": "FULL BODY STRETCH: Get up and do a quick 2 minute stretch. Stand with your feet together and bend forward trying to touch your toes. Exhale fully and relax your legs and back. Then, while inhaling, slowely return to standing and reach your arms straight overhead.  Take a breath. Then, with your arms still overhead, breathe out as you bend your upper body slightly to the right. Take three slow breaths. Slowly return to the center. Repeat on the left side.",
+			"log": "did a full body stretch",
 			"experiencePoints": "400",
 			"buttonColor": "#E06666" ,
 			"imageURL": "dumbbell"			

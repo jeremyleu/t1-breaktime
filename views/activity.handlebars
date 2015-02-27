@@ -12,7 +12,7 @@
         var data = new google.visualization.arrayToDataTable([
 
 
-          ['Days', 'Points'],
+          ['Days', 'Experience Points'],
           ["Day 1",{{user1.currentxp}}],
           ["Day 2", 0],
           ["Day 3", 0],
@@ -21,13 +21,17 @@
         ]);
 
         var options = {
-          title: 'Daily Experience',
+        	chart{
+          title: 'Daily Experience Points ',
           width: 450,
           legend: { position: 'none' },
-          chart: { subtitle: 'experience daily totals' },
+          chart: { subtitle: 'experience points daily totals' },
           axes: {
             x: {
               0: { side: 'top'} // Top x-axis.
+            }
+            y: {
+              0: { label: 'Experience Points' } // Top x-axis.
             }
           },
           bar: { groupWidth: "90%" }

@@ -420,6 +420,13 @@ label {
 		text-overflow:ellipsis;
 		-o-text-overflow:ellipsis;
 	}
+	.disabled .jumbotron{
+		background-image:url('../images/lock5.png');
+		background-color: #eeeeee;
+		background-size:auto 100%;
+		background-repeat:no-repeat;
+		background-position:right;
+	}
 }
 @media all and (max-height: 615px){
 	#fixed_timer {

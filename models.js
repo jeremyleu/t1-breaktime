@@ -14,6 +14,7 @@ var UserSchema = new Mongoose.Schema({
 	//"date": Date,
 	"enjoyedBreak": Boolean,
 	"productive": Boolean}],
+	"levelsalt": Boolean
 });
 
 exports.User = Mongoose.model('User', UserSchema);

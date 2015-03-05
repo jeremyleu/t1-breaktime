@@ -3,6 +3,7 @@
 		<title>BREAKTIME - Levels</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/pagetemplate.css" />
+		{{> tracking_code_script}}
 	</head>
 	<body>
 
@@ -79,6 +80,8 @@
 				else
 				{
 					$('#errormsg').html("<center>You have not unlocked that level yet!<br><br></center>");
+					window.scrollTo(0, 0);
+					woopra.track("disabled_level_clicked_nolocks");
 				}
 		   	});
 		</script>

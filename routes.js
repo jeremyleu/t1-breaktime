@@ -62,6 +62,7 @@ module.exports = function (app) {
             "breaks": 0,
             "breaks_arr": [
             ],
+            "levelsalt": (Math.random() < 0.5)
           };
           var newUser1 = new models.User(newUser);
           newUser1.save(afterSave);

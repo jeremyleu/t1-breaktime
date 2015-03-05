@@ -18,7 +18,7 @@
 					"productive": false}
 
 			],
-			"current": false
+			"levelsalt": true
 		},
 		{
 			"email": "idr@ucsd.edu",
@@ -38,7 +38,7 @@
 					"productive": false}
 
 			],			
-			"current": false
+			"levelsalt": false
 		}
 	]
 }

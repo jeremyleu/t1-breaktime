@@ -8,6 +8,7 @@
      	 google.load("visualization", "1.1", {packages:["bar"]});
      	 google.setOnLoadCallback(drawStuff);
 
+
    	   	function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
 
@@ -41,6 +42,17 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       };
     </script>
+	<script src="<path to>\timeseries\timeseries.js"></script>
+	<link rel="stylesheet" href="<path to>\timeseries\style.css" />
+	 <script>
+        window.onload = function() {
+          var domEl = 'timeseries';
+          var data = [{'value': 1380854103662},{'value': 1363641921283}];
+          var brushEnabled = true;
+          timeseries(domEl, data, brushEnabled);
+        }
+      </script>
+
     {{> tracking_code_script}}
 	</head>
 	<body>
@@ -59,6 +71,7 @@
 							<div id = "countdown_timer"><a href = "home" id = "timerlink"><span id = "timeleft" style = "display:inline">{{user1.timerpref}}</span></a></div></div>
 							<span id = "breaknumberinvis" style = "display:none">{{user1.breaks}}</span>
 
+
 					
 					<div id="top_x_div" style="width: 500px; height: 500px;"></div><br><br>
 					<!--<h2>Level: 1</h2>
@@ -67,6 +80,11 @@
 					<h2>Distance: 2.1 miles</h2>
 					<h2>Calories: 131.7 cal</h2>
 					<h2>Active Minutes: 48 min</h2> -->
+					<div class="timeseries">
+						<h2>Breaks Taken </h2>
+					</div>
+
+
 					<div class = "plaintext">
 						<h2>You have taken <span id = "breaknumber"></span></h2><br>
 
@@ -75,6 +93,7 @@
 								{{/each}}
 
 					</div>
+
 				    
 			</div>
 			</div>

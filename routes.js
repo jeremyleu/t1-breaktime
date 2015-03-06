@@ -57,7 +57,7 @@ module.exports = function (app) {
           {
             "email": req.body.username,
             "registerdate": moment().format(),
-            "registerdatestring": moment().format("dddd, MMMM Do YYYY [at] h:mm a"),
+            "registerdatestring": moment().zone(new Date().getTimezoneOffset()).format("dddd, MMMM Do YYYY [at] h:mm a"),
             "timerpref": req.body.timerinterval,
             "timeremaining": req.body.timerinterval,
             "currentlevel": 1,

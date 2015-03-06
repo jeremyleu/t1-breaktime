@@ -28,7 +28,7 @@ exports.completeActivity = function(req, res){
 				"enjoyedBreak": req.body.satisfaction === "true",
 				"productive": req.body.productivity === "true",
 				"shortdescription": activities["activities_arr"][req.body.levelDone-1].log,
-				"date": moment().format(),
+				"date": moment().zone(new Date().getTimezoneOffset()).format(),
 				"datestring": moment().format("dddd, MMMM Do YYYY [at] h:mm a")
 	    	}
 	    	users1.breaks_arr.unshift(finishedBreak);

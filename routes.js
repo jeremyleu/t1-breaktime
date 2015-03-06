@@ -18,6 +18,7 @@ var registerHandler = require('./routes/registerHandler');
 //var logout = require('./routes/logout');
 var congratulations = require('./routes/congratulations');
 var moment = require('moment');
+var momenttimezone = require('moment-timezone');
 
 module.exports = function (app) {
 
@@ -56,8 +57,8 @@ module.exports = function (app) {
           var newUser = 
           {
             "email": req.body.username,
-            "registerdate": moment().format(),
-            "registerdatestring": moment().utcOffset(new Date().getTimezoneOffset()).format("dddd, MMMM Do YYYY [at] h:mm a"),
+            "registerdate": moment().tz(req.body.timezone).format(),
+            "registerdatestring": moment().tz(req.body.timezone).format("dddd, MMMM Do YYYY [at] h:mm a"),
             "timerpref": req.body.timerinterval,
             "timeremaining": req.body.timerinterval,
             "currentlevel": 1,

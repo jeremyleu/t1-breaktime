@@ -3,6 +3,7 @@ var models = require('../models.js');
 var thresholds = require("../thresholds.json");
 var activities = require("../activities.json");
 var moment = require('moment');
+var momenttimezone = require('moment-timezone');
 
 
 exports.completeActivity = function(req, res){
@@ -29,8 +30,8 @@ exports.completeActivity = function(req, res){
 				"enjoyedBreak": req.body.satisfaction === "true",
 				"productive": req.body.productivity === "true",
 				"shortdescription": activities["activities_arr"][req.body.levelDone-1].log,
-				"date": moment().utcOffset(new Date().getTimezoneOffset()).format(),
-				"datestring": moment().format("dddd, MMMM Do YYYY [at] h:mm a")
+				"date": moment().tz(req.body.timezone).format(),
+				"datestring": moment().tz(req.body.timezone).format("dddd, MMMM Do YYYY [at] h:mm a")
 	    	}
 	    	users1.breaks_arr.unshift(finishedBreak);
 	    	

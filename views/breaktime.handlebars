@@ -32,6 +32,7 @@
 				<form align = "justify" method = "post" action = "/activityComplete">
 					<input id = "xp2" name = "experienceGained" type = "hidden"></input>
 					<input id = "level2" name = "levelDone" type = "hidden"></input>
+					<input id = "timezone" name = "timezone" type = "hidden"></input>
 					<input id = "enjoyedactivity" name = "satisfaction" type = "hidden"></input>
 					<input id = "productive" name = "productivity" type = "hidden"></input>
 					<input id = "return_btn" class = "btn btn-default btn-xlarge btn-return" type = "submit" value = "Click to restart the timer."></input>
@@ -52,9 +53,15 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="suggestions.json"></script>
 		<script src="levelThresholds.json"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js"></script>
+		<script src="js/moment-timezone-with-data.min.js"></script>
 		<script type="text/javascript">
 
 			window.onload = function() {
+				var tz = jstz.determine();
+				$('#timezone').val(tz.name());
+				console.log(tz.name());
 				var maxLevel = 17;
 
 				var pathname = window.location.href;

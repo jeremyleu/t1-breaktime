@@ -22,13 +22,14 @@ exports.completeActivity = function(req, res){
 	    	if(err) console.log(err);
 	    	users1.breaks++;
 	    	users1.currentxp += parseInt(req.body.experienceGained, 10);
+	    	console.log(new Date().getTimezoneOffset());
 	    	var finishedBreak = 
 	    	{
 	    		"level": req.body.levelDone,
 				"enjoyedBreak": req.body.satisfaction === "true",
 				"productive": req.body.productivity === "true",
 				"shortdescription": activities["activities_arr"][req.body.levelDone-1].log,
-				"date": moment().zone(new Date().getTimezoneOffset()).format(),
+				"date": moment().utcOffset(new Date().getTimezoneOffset()).format(),
 				"datestring": moment().format("dddd, MMMM Do YYYY [at] h:mm a")
 	    	}
 	    	users1.breaks_arr.unshift(finishedBreak);

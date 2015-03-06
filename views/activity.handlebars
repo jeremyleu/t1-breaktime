@@ -45,7 +45,7 @@
       };
     </script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script src="<path to>\timeseries\timeseries.js"></script>
+    <!--<script src="<path to>\timeseries\timeseries.js"></script>
 	<link rel="stylesheet" href="<path to>\timeseries\style.css" />
 	 <script>
         window.onload = function() {
@@ -54,7 +54,7 @@
           var brushEnabled = true;
           timeseries(domEl, data, brushEnabled);
         }
-      </script>
+      </script>-->
 
     {{> tracking_code_script}}
 	</head>
@@ -91,7 +91,7 @@
 						<h2>You have taken <span id = "breaknumber"></span></h2><br>
 
 								{{#each user1.breaks_arr}}
-								You {{shortdescription}} on <span class = "breakdate">{{datestring}}</span>, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
+								You {{shortdescription}} on <span class = "breakdate">{{date}}</span>, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
 								{{/each}}
 
 					</div>
@@ -115,6 +115,8 @@
 		<script src="js/countdown.js" type="text/javascript"></script>
 		<script src="levelThresholds.json"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js"></script>
+		<script src="moment-timezone/builds/moment-timezone-with-data.min.js"></script>
 		<script type = "text/javascript">
 			window.onload = function() {
 				/*if($('#enjoy').text() == "1")
@@ -133,6 +135,15 @@
 				{
 					$('#productivevisible').text("was not productive before the break");
 				}*/
+				/*moment.tz.load({
+				    zones : ['America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0',],
+				    links : [],
+				    version : '2015a'
+				});*/
+				var tz = jstz.determine();
+				$(".breakdate").each(function() {
+					$(this).text(moment($(this).text()).tz(tz.name()).format("dddd, MMMM Do YYYY [at] h:mm a"));
+				});
 				var numBreaks = parseInt($('#breaknumberinvis').text(),10);
 				if(numBreaks == 1)
 					var breakText = numBreaks + " break:";

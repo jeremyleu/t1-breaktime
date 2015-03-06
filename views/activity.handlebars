@@ -142,7 +142,7 @@
 				});*/
 				var tz = jstz.determine();
 				$(".breakdate").each(function() {
-					$(this).text(moment($(this).text()).tz(tz.name()).format("dddd, MMMM Do YYYY [at] h:mm a"));
+					$(this).text(moment($(this).text()).format("dddd, MMMM Do YYYY [at] h:mm a"));
 				});
 				var numBreaks = parseInt($('#breaknumberinvis').text(),10);
 				if(numBreaks == 1)

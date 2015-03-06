@@ -4,7 +4,8 @@ var Mongoose = require('mongoose');
 
 var UserSchema = new Mongoose.Schema({
 	"email": String,
-	//"registerDate": Date,
+	"registerdate": String,
+	"registerdatestring": String,
 	"timerpref": String,
 	"timeremaining": String,
 	"currentlevel": Number,
@@ -13,8 +14,10 @@ var UserSchema = new Mongoose.Schema({
 	"breaks_arr": [{"level": String,
 	//"date": Date,
 	"enjoyedBreak": Boolean,
-	"productive": Boolean}],
-	"levelsalt": Boolean
+	"productive": Boolean,
+	"shortdescription": String,
+	"date": String,
+	"datestring": String}],
 });
 
 exports.User = Mongoose.model('User', UserSchema);

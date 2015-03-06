@@ -2,6 +2,8 @@
 	"users_arr": [
 		{
 			"email": "j3leu@ucsd.edu",
+			"registerdate": "2013-02-04T22:44:30.652Z",
+			"registerdatestring": "Thursday, March 5th 2015, at 5:27:41 pm",
 			"timerpref": "00:30:00",
 			"timeremaining": "00:30:00",
 			"currentlevel": 1,
@@ -12,16 +14,23 @@
 
 					{"level": 1, 
 					"enjoyedBreak": false, 
-					"productive": false},
+					"productive": false,
+					"shortdescription": "stuff",
+					"date": "2013-02-04T22:44:30.652Z",
+					"datestring": "Thursday, March 5th 2015, at 5:27:41 pm"},
 					{"level": 2, 
 					"enjoyedBreak": false, 
-					"productive": false}
+					"productive": false,
+					"shortdescription": "stuff",
+					"date": "2013-02-04T22:44:30.652Z",
+					"datestring": "Thursday, March 5th 2015, at 5:27:41 pm"}
 
-			],
-			"levelsalt": true
+			]
 		},
 		{
 			"email": "idr@ucsd.edu",
+			"registerdate": "2013-02-04T22:44:30.652Z",
+			"registerdatestring": "Thursday, March 5th 2015, at 5:27:41 pm",
 			"timerpref": "00:30:00",
 			"timeremaining": "00:30:00",
 			"currentlevel": 1,
@@ -32,13 +41,18 @@
 
 					{"level": 1,
 					"enjoyedBreak": false, 
-					"productive": false},
+					"productive": false,
+					"shortdescription": "stuff",
+					"date": "2013-02-04T22:44:30.652Z",
+					"datestring": "Thursday, March 5th 2015, at 5:27:41 pm"},
 					{"level": 2, 
 					"enjoyedBreak": false, 
-					"productive": false}
+					"productive": false,
+					"shortdescription": "stuff",
+					"date": "2013-02-04T22:44:30.652Z",
+					"datestring": "Thursday, March 5th 2015, at 5:27:41 pm"}
 
-			],			
-			"levelsalt": false
+			]		
 		}
 	]
 }

@@ -267,6 +267,10 @@ td{
 	color: #3f3f3f;
 }
 
+
+
+
+
 .btn-satisfaction, .btn-productivity, .btn-return {
 	display:none;
 }
@@ -281,8 +285,19 @@ label {
 }
 
 .disabled div {
-	background-color: #eeeeee;
 	color:#AAAAAA;
+}
+
+.disabled .jumbotron{
+	background-image:url('../images/lock5.png');
+	background-color: #eeeeee;
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.disabled .activityxp{
+	background-color:transparent;
 }
 
 .activityxp {
@@ -404,6 +419,13 @@ label {
 		overflow: hidden;
 		text-overflow:ellipsis;
 		-o-text-overflow:ellipsis;
+	}
+	.disabled .jumbotron{
+		background-image:url('../images/lock5.png');
+		background-color: #eeeeee;
+		background-size:auto 100%;
+		background-repeat:no-repeat;
+		background-position:right;
 	}
 }
 @media all and (max-height: 615px){

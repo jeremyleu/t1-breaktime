@@ -17,6 +17,7 @@ var activityComplete = require('./routes/activityComplete');
 var registerHandler = require('./routes/registerHandler');
 //var logout = require('./routes/logout');
 var congratulations = require('./routes/congratulations');
+var moment = require('moment');
 
 module.exports = function (app) {
 
@@ -55,6 +56,8 @@ module.exports = function (app) {
           var newUser = 
           {
             "email": req.body.username,
+            "registerdate": moment().format(),
+            "registerdatestring": moment().format("dddd, MMMM Do YYYY [at] h:mm a"),
             "timerpref": req.body.timerinterval,
             "timeremaining": req.body.timerinterval,
             "currentlevel": 1,
@@ -62,7 +65,6 @@ module.exports = function (app) {
             "breaks": 0,
             "breaks_arr": [
             ],
-            "levelsalt": (Math.random() < 0.5)
           };
           var newUser1 = new models.User(newUser);
           newUser1.save(afterSave);

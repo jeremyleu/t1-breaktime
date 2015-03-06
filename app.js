@@ -11,6 +11,8 @@ var handlebars = require('express3-handlebars')
 var mongoose = require('mongoose');
 var passport = require('passport');
 var routes = require('./routes');
+var moment = require('moment');
+moment().format();
 var flash = require('connect-flash');
 var LocalStrategy = require('passport-local').Strategy;
 

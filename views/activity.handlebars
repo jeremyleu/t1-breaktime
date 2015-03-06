@@ -9,19 +9,21 @@
      	 google.setOnLoadCallback(drawStuff);
 
    	   	function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
+
+        	var data = new google.visualization.arrayToDataTable([
 
 
-          ['Days', 'Experience Points'],
-          ["Day 1",{{user1.currentxp}}],
-          ["Day 2", 0],
-          ["Day 3", 0],
-          ["Day 4", 0],
-          ["Day 5", 0]
-        ]);
+	          ['Days', 'Experience Points'],
+	          [moment().subtract(4,'days').format("ddd"), {{day1}}],
+	          [moment().subtract(3,'days').format("ddd"), {{day2}}],
+	          [moment().subtract(2,'days').format("ddd"), {{day3}}],
+	          ["Yesterday", {{day4}}],
+	          ["Today", {{day5}}]
+	        ]);
 
         var options = {
           title: 'Daily Experience Points ',
+          colors: ['#b2ebfc'],
           width: 450,
           legend: { position: 'none' },
           chart: { subtitle: 'experience points daily totals' },
@@ -33,7 +35,7 @@
               0: { label: 'Experience Points' } // Top x-axis.
             }
           },
-          bar: { groupWidth: "90%" }
+          bar: { groupWidth: "90%" },
         };
 
         var chart = new google.charts.Bar(document.getElementById('top_x_div'));
@@ -41,6 +43,8 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       };
     </script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
     {{> tracking_code_script}}
 	</head>
 	<body>
@@ -60,7 +64,7 @@
 							<span id = "breaknumberinvis" style = "display:none">{{user1.breaks}}</span>
 
 					
-					<div id="top_x_div" style="width: 500px; height: 500px;"></div><br><br>
+					<div id="top_x_div" style="width: 100%; height: 500px;"></div><br><br>
 					<!--<h2>Level: 1</h2>
 					<h2>Experience Points: 200</h2>
 					<h2>Average Steps a Day: 3821</h2>
@@ -71,7 +75,7 @@
 						<h2>You have taken <span id = "breaknumber"></span></h2><br>
 
 								{{#each user1.breaks_arr}}
-								You took a level {{level}} break, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
+								You {{shortdescription}} on <span class = "breakdate">{{datestring}}</span>, {{#if enjoyedBreak}}enjoyed it{{else}}did not enjoy it{{/if}}, and {{#if productive}}was {{else}}was not{{/if}} productive before the break.<br>
 								{{/each}}
 
 					</div>
@@ -93,6 +97,7 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/countdown.js" type="text/javascript"></script>
 		<script src="levelThresholds.json"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 		<script type = "text/javascript">
 			window.onload = function() {
 				/*if($('#enjoy').text() == "1")
@@ -129,6 +134,10 @@
 				}
 				else
 					$("#xpremaining").text("MAX REACHED");
+				//var datestuff = 
+				//var momentformatted = moment(datestuff).format("dddd, MMMM Do YYYY, [at] h:mm:ss a");
+				//$('.breakdate').text(momentformatted);
+
 			}
 			var timepref = $('#countdown_timer span').text();
 			var pathname = window.location.href;

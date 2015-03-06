@@ -1,6 +1,8 @@
 var users = require("../users.json");
 var models = require('../models.js');
 var thresholds = require("../thresholds.json");
+var activities = require("../activities.json");
+var moment = require('moment');
 
 
 exports.completeActivity = function(req, res){
@@ -24,9 +26,12 @@ exports.completeActivity = function(req, res){
 	    	{
 	    		"level": req.body.levelDone,
 				"enjoyedBreak": req.body.satisfaction === "true",
-				"productive": req.body.productivity === "true"
+				"productive": req.body.productivity === "true",
+				"shortdescription": activities["activities_arr"][req.body.levelDone-1].log,
+				"date": moment().format(),
+				"datestring": moment().format("dddd, MMMM Do YYYY [at] h:mm a")
 	    	}
-	    	users1.breaks_arr.push(finishedBreak);
+	    	users1.breaks_arr.unshift(finishedBreak);
 	    	
 
 	        console.log(users1);

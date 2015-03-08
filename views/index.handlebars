@@ -20,6 +20,7 @@
                 <h2>LOGIN</h2>
                 <span id = "loginerror">{{message}}</span><br class = "mobileonly">
                 <form align = "left" method = "post" action = "/login" id ="login">
+                    <input name = "timezone" id = "timezone" type = "hidden"></input>
                     <div id = "formtop" class = "form-group">
                         <label for = "emailfield">Email address: </label><br class = "desktoponly">
                         <input id = "emailfield" name = "username" type = "email" class = "form-control" placeholder="Email"></input>
@@ -39,7 +40,14 @@
         </center>
         <div id = "bottomspace" class = "desktoponly"></div>
         <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js"></script>
+        <script src="js/moment-timezone-with-data.min.js"></script>
         <script type = "text/javascript">
+            window.onload = function() {
+                var tz = jstz.determine();
+                $('#timezone').val(tz.name());
+            }
             $(document).ready(function(){
   
                 

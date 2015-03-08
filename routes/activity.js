@@ -22,23 +22,24 @@ exports.view = function(req, res){
 	   		var days_arr = [0,0,0,0,0];
 	   		for(var i = 0; i < breaks_arr.length; i++)
 	   		{
-		   		if(moment().format("ddd") == moment(breaks_arr[i].date).format("ddd"))
+	   			console.log(res.locals.timezone);
+		   		if(moment().tz(res.locals.timezone).format("ddd") == moment(breaks_arr[i].date).tz(res.locals.timezone).format("ddd"))
 	   			{
 	   				days_arr[4] += (parseInt(activities.activities_arr[breaks_arr[i].level].experiencePoints, 10));
 	   			}
-	   			else if(moment().subtract(1,'days').format("ddd") == moment(breaks_arr[i].date).format("ddd"))
+	   			else if(moment().subtract(1,'days').tz(res.locals.timezone).format("ddd") == moment(breaks_arr[i].date).tz(res.locals.timezone).format("ddd"))
 	   			{
 	   				days_arr[3] += (parseInt(activities.activities_arr[breaks_arr[i].level].experiencePoints, 10));
 	   			}
-	   			else if(moment().subtract(2,'days').format("ddd") == moment(breaks_arr[i].date).format("ddd"))
+	   			else if(moment().subtract(2,'days').tz(res.locals.timezone).format("ddd") == moment(breaks_arr[i].date).tz(res.locals.timezone).format("ddd"))
 	   			{
 	   				days_arr[2] += (parseInt(activities.activities_arr[breaks_arr[i].level].experiencePoints, 10));
 	   			}
-	   			else if(moment().subtract(3,'days').format("ddd") == moment(breaks_arr[i].date).format("ddd"))
+	   			else if(moment().subtract(3,'days').tz(res.locals.timezone).format("ddd") == moment(breaks_arr[i].date).tz(res.locals.timezone).format("ddd"))
 	   			{
 	   				days_arr[1] += (parseInt(activities.activities_arr[breaks_arr[i].level].experiencePoints, 10));
 	   			}
-	   			else if(moment().subtract(4,'days').format("ddd") == moment(breaks_arr[i].date).format("ddd"))
+	   			else if(moment().subtract(4,'days').tz(res.locals.timezone).format("ddd") == moment(breaks_arr[i].date).tz(res.locals.timezone).format("ddd"))
 	   			{
 	   				days_arr[0] += (parseInt(activities.activities_arr[breaks_arr[i].level].experiencePoints, 10));
 	   			}

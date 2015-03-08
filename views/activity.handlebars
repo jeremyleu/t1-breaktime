@@ -211,7 +211,7 @@
 			});
 			$('#activitylink').click(function(e) {
 				e.preventDefault();
-				window.location.href = "activity?timeremaining=" + timer.getTimeRemaining();
+				window.location.href = "activity?timezone="+tz.name()+"timeremaining=" + timer.getTimeRemaining();
 			});
 			$('#settingslink').click(function(e) {
 				e.preventDefault();

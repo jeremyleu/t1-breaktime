@@ -15,6 +15,7 @@
 				<span id = "registererror">{{info}}</span>
 				<form align = "left" method = "post" action = "/register">
 					<div id = "formtop" class = "form-group">
+						<input name = "timezone" id = "timezone" type = "hidden"></input>
 						<label for = "email">Email address: </label><br>
 						<input id = "email" name = "username" type = "email" class = "form-control" placeholder="Email"></input>
 						<label for = "password">Password: </label><br class = "desktoponly">
@@ -57,7 +58,14 @@
 	</center>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src = "js/bootstrap.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js"></script>
+	<script src="js/moment-timezone-with-data.min.js"></script>
 	<script type = "text/javascript">
+		window.onload = function() {
+			var tz = jstz.determine();
+			$('#timezone').val(tz.name());
+		}
 		$('#timerintervalmenu li a').click(function(e) {
 			e.preventDefault();
 			var value = $(this).text();

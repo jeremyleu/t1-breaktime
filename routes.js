@@ -52,6 +52,8 @@ module.exports = function (app) {
             console.log(err);
             return res.render("register", {info: err.message});
         }
+        
+
 
         passport.authenticate('local')(req, res, function () {
           var newUser = 
@@ -86,8 +88,7 @@ module.exports = function (app) {
   app.post('/login', passport.authenticate('local', {
       successRedirect: 'home',
       failureRedirect: '/',
-      failureFlash: 'Invalid username or password.'})
-  );
+      failureFlash: 'Invalid username or password.'}));
 
   app.get('/logout', function(req, res) {
       req.logout();

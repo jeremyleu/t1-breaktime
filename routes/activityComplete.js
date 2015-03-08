@@ -21,9 +21,9 @@ exports.completeActivity = function(req, res){
 	        .exec(afterQuery);
 	    function afterQuery(err, users1) {
 	    	if(err) console.log(err);
+	    	res.locals.timezone = req.body.timezone;
 	    	users1.breaks++;
 	    	users1.currentxp += parseInt(req.body.experienceGained, 10);
-	    	console.log(new Date().getTimezoneOffset());
 	    	var finishedBreak = 
 	    	{
 	    		"level": req.body.levelDone,

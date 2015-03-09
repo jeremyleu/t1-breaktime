@@ -22,8 +22,7 @@ exports.view = function(req, res){
 	   		var days_arr = [0,0,0,0,0];
 	   		for(var i = 0; i < breaks_arr.length; i++)
 	   		{
-	   			console.log(res.locals.timezone);
-		   		if(moment().tz(res.locals.timezone).format("ddd") == moment(breaks_arr[i].date).tz(res.locals.timezone).format("ddd"))
+		   		if(moment().format("ddd") == moment(breaks_arr[i].date).format("ddd"))
 	   			{
 	   				days_arr[4] += (parseInt(activities.activities_arr[breaks_arr[i].level].experiencePoints, 10));
 	   			}
